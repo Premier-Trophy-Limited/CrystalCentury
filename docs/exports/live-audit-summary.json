@@ -1,0 +1,30 @@
+{
+  "baseUrl": "https://www.crystalcentury.com",
+  "generatedAtUtc": "2026-03-29T11:53:31.4552995Z",
+  "pages": [
+    {
+      "name": "home",
+      "sourceUrl": "https://www.crystalcentury.com/",
+      "outputPath": "C:\\Users\\School\\Downloads\\Documents\\GitHub\\crystalcentury-site\\docs\\audits\\live-home.html",
+      "fetchedAtUtc": "2026-03-29T11:53:31.4552995Z",
+      "statusCode": 200,
+      "cartBaseProductLinkCount": 8,
+      "enquiryButtonCount": 8,
+      "footerQuoteCtaCount": 0,
+      "hasWpmlDevBanner": true,
+      "legalLinkCount": 0
+    },
+    {
+      "name": "shop",
+      "sourceUrl": "https://www.crystalcentury.com/shop/",
+      "outputPath": "C:\\Users\\School\\Downloads\\Documents\\GitHub\\crystalcentury-site\\docs\\audits\\live-shop.html",
+      "fetchedAtUtc": "2026-03-29T11:53:31.4552995Z",
+      "statusCode": 200,
+      "cartBaseProductLinkCount": 0,
+      "enquiryButtonCount": 0,
+      "footerQuoteCtaCount": 0,
+      "hasWpmlDevBanner": true,
+      "legalLinkCount": 0
+    }
+  ]
+}

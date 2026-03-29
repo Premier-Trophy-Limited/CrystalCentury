@@ -1,0 +1,469 @@
+/*
+ Theme Name:   Hello Elementor Child
+ Theme URI:    https://www.crystalcentury.com/
+ Description:  Child theme for Crystal Century — visual refinements only.
+ Author:       Crystal Century
+ Template:     hello-elementor
+ Version:      1.2.0
+ Text Domain:  hello-elementor-child
+*/
+
+/* ============================================================
+   BASE — Typography & smoothing
+   ============================================================ */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a:not(.elementor-button):not(.button):not(.cc-enquiry-btn) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not(.elementor-button):not(.button):not(.cc-enquiry-btn):hover {
+  color: #b8960c;
+}
+.elementor-widget-heading .elementor-heading-title { line-height: 1.3; }
+
+/* ============================================================
+   HEADER — Nav
+   ============================================================ */
+.elementor-nav-menu .elementor-item {
+  letter-spacing: 0.05em;
+  font-weight: 500 !important;
+  transition: color 0.18s;
+}
+.e--pointer-framed .elementor-item::before,
+.e--pointer-framed .elementor-item::after {
+  border-width: 1px !important;
+}
+
+/* ============================================================
+   HERO — Carousel with text overlay
+   ============================================================ */
+
+/* Outer hero wrapper — ensures carousel + overlay stack correctly */
+.elementor-element-3ce4b654,
+.elementor-element-a94a31f {
+  position: relative !important;
+  overflow: hidden;
+}
+
+/* Carousel fills full container */
+.elementor-element-3ce4b654 .e-swiper-container,
+.elementor-element-3ce4b654 .swiper,
+.elementor-element-3ce4b654 .elementor-image-carousel-wrapper,
+.elementor-element-a94a31f  .e-swiper-container,
+.elementor-element-a94a31f  .swiper,
+.elementor-element-a94a31f  .elementor-image-carousel-wrapper {
+  width: 100%;
+  display: block;
+}
+
+/* Text overlay */
+.elementor-element-cc_herolay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  background: linear-gradient(to right, rgba(10,10,10,0.62) 40%, rgba(10,10,10,0.12) 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 0 7% 6% !important;
+  pointer-events: none;
+}
+.elementor-element-cc_herolay * { pointer-events: auto; }
+
+/* Hero headline */
+.elementor-element-cc_htag .elementor-heading-title {
+  color: #ffffff !important;
+  font-size: clamp(1.7rem, 4vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  margin-bottom: 0.4em;
+}
+
+/* Hero sub-headline */
+.elementor-element-cc_hsub .elementor-text-editor p {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1.2em;
+  letter-spacing: 0.04em;
+}
+
+/* Hero CTA button */
+.elementor-element-cc_hbtn .elementor-button {
+  background-color: #b8960c !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  border-radius: 2px !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.elementor-element-cc_hbtn .elementor-button:hover {
+  background-color: #8a6e0a !important;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   CATEGORY GRID — 精選產品分類
+   ============================================================ */
+.elementor-element-cc_catsec {
+  background: #f9f7f4 !important;
+}
+
+/* Section title with gold underline */
+.elementor-element-cc_cattitle .elementor-heading-title {
+  font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em;
+  color: #1a1a1a !important;
+  position: relative;
+  padding-bottom: 0.6em;
+}
+.elementor-element-cc_cattitle .elementor-heading-title::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: #b8960c;
+  margin: 10px auto 0;
+}
+
+/* Grid container */
+.elementor-element-cc_catgrid {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+
+/* Category cards */
+.elementor-element-cc_catgrid .elementor-widget-image-box {
+  flex: 0 0 calc(25% - 12px);
+  min-width: 160px;
+  max-width: 220px;
+  box-sizing: border-box;
+}
+.elementor-element-cc_catgrid .elementor-image-box-wrapper {
+  background: #ffffff;
+  border: 1px solid #e8e3db;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-align: center;
+  height: 100%;
+  padding-bottom: 14px;
+}
+.elementor-element-cc_catgrid .elementor-image-box-wrapper:hover {
+  box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+}
+.elementor-element-cc_catgrid .elementor-image-box-img {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.elementor-element-cc_catgrid .elementor-image-box-img img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s;
+}
+.elementor-element-cc_catgrid .elementor-image-box-wrapper:hover img {
+  transform: scale(1.04);
+}
+.elementor-element-cc_catgrid .elementor-image-box-content {
+  padding: 10px 8px 0;
+}
+.elementor-element-cc_catgrid .elementor-image-box-title {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+  letter-spacing: 0.04em;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .elementor-element-cc_catgrid .elementor-widget-image-box { flex: 0 0 calc(33.333% - 12px); }
+}
+@media (max-width: 600px) {
+  .elementor-element-cc_catgrid .elementor-widget-image-box { flex: 0 0 calc(50% - 8px); min-width: 120px; }
+}
+
+/* ============================================================
+   WOOCOMMERCE — Product cards (shop / category pages)
+   ============================================================ */
+.woocommerce ul.products {
+  margin: 0 !important;
+}
+.woocommerce ul.products li.product {
+  background: #fff;
+  border: 1px solid #ece8e0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  padding-bottom: 14px !important;
+}
+.woocommerce ul.products li.product:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+.woocommerce ul.products li.product a img {
+  border-radius: 0 !important;
+  transition: transform 0.35s;
+}
+.woocommerce ul.products li.product:hover img {
+  transform: scale(1.03);
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+  padding: 10px 12px 4px !important;
+  line-height: 1.35;
+}
+
+/* Enquiry button in product loop */
+.woocommerce ul.products li.product .button.cc-enquiry-btn {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 8px 12px 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 0.82rem !important;
+  padding: 8px 16px !important;
+}
+
+/* Single product page enquiry button */
+.cc-enquiry-btn {
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.cc-enquiry-btn:hover {
+  background: #9a7209 !important;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+/* Product breadcrumb */
+.woocommerce .woocommerce-breadcrumb {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+.woocommerce .woocommerce-breadcrumb a { color: #888; }
+.woocommerce .woocommerce-breadcrumb a:hover { color: #b8960c; }
+
+/* Product title */
+.woocommerce div.product .product_title {
+  font-size: clamp(1.4rem, 3vw, 2rem) !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* Short description — appears below title on single product */
+.woocommerce div.product .woocommerce-product-details__short-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+  border-left: 3px solid #b8960c;
+  padding-left: 0.9em;
+}
+.woocommerce div.product .woocommerce-product-details__short-description p {
+  margin: 0;
+}
+
+/* Product gallery — thumbnail strip */
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+  border: 1px solid #ece8e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.woocommerce div.product div.images .flex-control-thumbs li img {
+  border-radius: 3px;
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.woocommerce div.product div.images .flex-control-thumbs li img:hover,
+.woocommerce div.product div.images .flex-control-thumbs li img.flex-active {
+  opacity: 1;
+  border-color: #b8960c;
+}
+
+/* Product summary area */
+.woocommerce div.product div.summary {
+  padding-left: 2rem;
+}
+@media (max-width: 768px) {
+  .woocommerce div.product div.summary { padding-left: 0; }
+}
+
+/* "Request a Quote" button area clean spacing */
+.woocommerce div.product .cc-enquiry-btn {
+  margin-top: 1rem !important;
+}
+
+/* Hide $0 prices globally (catalogue mode) */
+.woocommerce-Price-amount.amount { display: none; }
+
+/* Show price in cart/checkout only */
+.woocommerce-cart   .woocommerce-Price-amount.amount,
+.woocommerce-checkout .woocommerce-Price-amount.amount { display: inline !important; }
+
+/* ============================================================
+   CATALOGUE MODE — Hide cart UI
+   ============================================================ */
+.elementor-menu-cart__wrapper,
+.elementor-menu-cart__container,
+.woocommerce-mini-cart,
+a.cart-contents,
+.wc-block-mini-cart,
+.widget_shopping_cart,
+.cart-icon,
+.cc-cart-count { display: none !important; }
+
+/* ============================================================
+   SHOP / CATEGORY — Sidebar & widget
+   ============================================================ */
+.woocommerce .widget_product_categories .product-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.woocommerce .widget_product_categories li {
+  border-bottom: 1px solid #f0ebe3;
+  padding: 6px 0;
+}
+.woocommerce .widget_product_categories li a {
+  color: #444;
+  font-size: 0.88rem;
+  transition: color 0.15s;
+}
+.woocommerce .widget_product_categories li a:hover,
+.woocommerce .widget_product_categories .current-cat > a { color: #b8960c; font-weight: 600; }
+
+/* ============================================================
+   ENQUIRY FORM — Contact page
+   ============================================================ */
+.elementor-form .elementor-field-group { margin-bottom: 1.2rem; }
+.elementor-form .elementor-field-label { font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 0.3rem; }
+.elementor-form .elementor-field-textual,
+.elementor-form .elementor-field-select {
+  border: 1px solid #d8d2c8 !important;
+  border-radius: 3px !important;
+  padding: 10px 14px !important;
+  font-size: 0.9rem !important;
+  transition: border-color 0.2s !important;
+}
+.elementor-form .elementor-field-textual:focus,
+.elementor-form .elementor-field-select:focus {
+  border-color: #b8960c !important;
+  outline: none;
+}
+.elementor-form .elementor-button[type="submit"] {
+  background: #b8960c !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-radius: 3px !important;
+  padding: 12px 32px !important;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.elementor-form .elementor-button[type="submit"]:hover {
+  background: #8a6e0a !important;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   CATEGORY INTRO — WooCommerce archive
+   ============================================================ */
+.woocommerce-products-header__title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+.woocommerce-products-header .woocommerce-product-subcategories { display: none; }
+
+/* WooCommerce archive — result count & ordering bar */
+.woocommerce-result-count {
+  font-size: 0.82rem;
+  color: #888;
+}
+.woocommerce-ordering select {
+  border: 1px solid #d8d2c8;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  color: #444;
+}
+
+/* Pagination */
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  color: #444 !important;
+  border-color: #e0d9cf !important;
+  font-size: 0.88rem;
+}
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #b8960c !important;
+  border-color: #b8960c !important;
+  color: #fff !important;
+}
+
+/* ============================================================
+   LANGUAGE SWITCHER — EN pill in header
+   ============================================================ */
+.lang-switcher-en > a.elementor-item {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em;
+  border: 1px solid currentColor !important;
+  border-radius: 3px !important;
+  padding: 3px 9px !important;
+  opacity: 0.75;
+  transition: opacity 0.18s !important;
+}
+.lang-switcher-en > a.elementor-item:hover { opacity: 1; }
+
+/* ============================================================
+   WOOLENTOR PRODUCT WIDGET
+   ============================================================ */
+.wl-product-wrap {
+  border: 1px solid #ece8e0 !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s !important;
+}
+.wl-product-wrap:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
+  transform: translateY(-2px) !important;
+}
+.wl-product-wrap .wl-product-title a {
+  font-size: 0.88rem !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  color: #222 !important;
+}
+
+/* ============================================================
+   QUICK CONTACT BUTTON
+   ============================================================ */
+.e-contact-buttons__cta-button {
+  background: #b8960c !important;
+  border: 0 !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.e-contact-buttons__cta-button:hover {
+  background: #8a6e0a !important;
+}
