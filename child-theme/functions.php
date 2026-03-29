@@ -371,6 +371,10 @@ add_filter( 'gettext', function ( $translated, $text ) {
         return cc_is_en() ? 'Search trophies, medals or gifts' : '搜尋獎盃、獎牌或禮品';
     }
 
+    if ( ! cc_is_en() && $text === 'Shop' ) {
+        return '產品分類';
+    }
+
     return $translated;
 }, 20, 2 );
 
