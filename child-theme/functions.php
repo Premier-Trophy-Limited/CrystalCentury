@@ -1573,8 +1573,21 @@ function cc_filter_frontend_markup( $html ) {
         $html
     );
 
+    if ( is_shop() ) {
+        if ( cc_is_en() ) {
+            $html = cc_rewrite_shop_category_card( $html, 'commemorative-gift', 'Promotional Gift' );
+            $html = cc_rewrite_shop_category_card( $html, 'pin', 'Pin Badge' );
+            $html = cc_rewrite_shop_category_card( $html, 'medal', 'Medal', get_stylesheet_directory_uri() . '/assets/category-medal.svg' );
+            $html = cc_rewrite_shop_category_card( $html, 'commemorative-plate', 'Commemorative Plate', get_stylesheet_directory_uri() . '/assets/category-commemorative-plate.svg' );
+        } else {
+            $html = cc_rewrite_shop_category_card( $html, 'medal', '獎牌', get_stylesheet_directory_uri() . '/assets/category-medal.svg' );
+            $html = cc_rewrite_shop_category_card( $html, 'commemorative-plate', '銀碟', get_stylesheet_directory_uri() . '/assets/category-commemorative-plate.svg' );
+        }
+    }
+
     if ( cc_is_en() ) {
         $html = str_replace( [ 'href="https://www.crystalcentury.com/shop/"', "href='https://www.crystalcentury.com/shop/'" ], [ 'href="https://www.crystalcentury.com/shop/?lang=en"', "href='https://www.crystalcentury.com/shop/?lang=en'" ], $html );
+        $html = str_replace( 'aria-label="選單"', 'aria-label="Menu"', $html );
 
         $replacements = [
             '姓名' => 'Name',
@@ -1606,8 +1619,7 @@ function cc_filter_frontend_markup( $html ) {
         $html = str_replace( array_keys( $replacements ), array_values( $replacements ), $html );
 
         if ( is_shop() ) {
-            $html = str_replace( 'Commemorative Gift</h2>', 'Promotional Gift</h2>', $html );
-            $html = str_replace( 'Pin</h2>', 'Pin Badge</h2>', $html );
+            $html = cc_fix_shop_hreflang_links( $html );
         }
     }
 
@@ -1618,6 +1630,50 @@ function cc_filter_frontend_markup( $html ) {
     if ( is_cart() ) {
         $html = str_replace( 'Cart - Premier Trophy', 'Quote List | Premier Trophy Hong Kong', $html );
     }
+
+    return $html;
+}
+
+function cc_rewrite_shop_category_card( $html, $slug, $label, $image_url = '' ) {
+    $pattern = '#(<a[^>]+href="https://www\.crystalcentury\.com/product-category/' . preg_quote( $slug, '#' ) . '/(?:\?lang=en)?"[^>]*>)(.*?)(<h2 class="woocommerce-loop-category__title">\s*)(.*?)(\s*</h2>)#s';
+
+    return preg_replace_callback(
+        $pattern,
+        static function ( $matches ) use ( $label, $image_url ) {
+            $anchor = $matches[1] . $matches[2];
+            $anchor = preg_replace( '#aria-label="[^"]*"#', 'aria-label="Visit product category ' . esc_attr( $label ) . '"', $anchor, 1 );
+            $anchor = preg_replace( '#alt="[^"]*"#', 'alt="' . esc_attr( $label ) . '"', $anchor, 1 );
+
+            if ( $image_url ) {
+                $asset_url = esc_url( $image_url );
+                $anchor    = preg_replace( '#data-src="[^"]*"#', 'data-src="' . $asset_url . '"', $anchor, 1 );
+                $anchor    = preg_replace( '#data-srcset="[^"]*"#', 'data-srcset="' . $asset_url . ' 300w"', $anchor, 1 );
+                $anchor    = preg_replace( '#src="[^"]*"#', 'src="' . $asset_url . '"', $anchor, 1 );
+                $anchor    = preg_replace( '#srcset="[^"]*"#', 'srcset="' . $asset_url . ' 300w"', $anchor, 1 );
+            }
+
+            return $anchor . $matches[3] . esc_html( $label ) . $matches[5];
+        },
+        $html
+    );
+}
+
+function cc_fix_shop_hreflang_links( $html ) {
+    $html = str_replace(
+        'hreflang="zh-hant" href="https://www.crystalcentury.com/shop/?lang=en"',
+        'hreflang="zh-hant" href="https://www.crystalcentury.com/shop/"',
+        $html
+    );
+    $html = str_replace(
+        'hreflang="en" href="https://www.crystalcentury.com/shop/?lang=en"',
+        'hreflang="en" href="https://www.crystalcentury.com/shop-en/?lang=en"',
+        $html
+    );
+    $html = str_replace(
+        'hreflang="x-default" href="https://www.crystalcentury.com/shop/?lang=en"',
+        'hreflang="x-default" href="https://www.crystalcentury.com/shop/"',
+        $html
+    );
 
     return $html;
 }
