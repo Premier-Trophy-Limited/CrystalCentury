@@ -82,23 +82,22 @@ jobs:
           REPO: ${{ github.repository }}
           PR:   ${{ steps.pr.outputs.number }}
         run: |
-          # Copilot review request — works once Copilot Code Review is enabled
-          # in repo Settings → Copilot → Code review
-          gh api \
-            repos/$REPO/pulls/$PR/requested_reviewers \
-            --method POST \
-            -f "reviewers[]=copilot-pull-request-reviewer[bot]" \
-            --silent 2>/dev/null || true
+          # Copilot has a ruleset for default branch PRs (auto-fires).
+          # For PRs targeting feature branches we request it explicitly.
+          BASE=$(gh pr view $PR --repo $REPO --json baseRefName --jq '.baseRefName')
+          DEFAULT=$(gh repo view $REPO --json defaultBranchRef --jq '.defaultBranchRef.name')
 
-          # Fallback: use the newer Copilot review endpoint if available
-          gh api \
-            repos/$REPO/pulls/$PR/reviews \
-            --method POST \
-            -f event=COMMENT \
-            -f body="@github-copilot review" \
-            --silent 2>/dev/null || true
-
-          echo "Copilot review requested on PR #$PR"
+          if [ "$BASE" != "$DEFAULT" ]; then
+            gh api repos/$REPO/pulls/$PR/requested_reviewers \
+              --method POST \
+              -f "reviewers[]=copilot-pull-request-reviewer[bot]" \
+              --silent 2>/dev/null || \
+            gh pr comment $PR --repo $REPO \
+              --body "@github-copilot review" 2>/dev/null || true
+            echo "Copilot review requested (non-default base branch)"
+          else
+            echo "Copilot ruleset will auto-trigger (PR targets default branch)"
+          fi
 
   # ── 3. Post a Codex-ready review prompt as a PR comment ───────────────────
   codex-prompt:
