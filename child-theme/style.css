@@ -4,9 +4,30 @@
  Description:  Child theme for Premier Trophy — visual refinements only.
  Author:       Premier Trophy
  Template:     hello-elementor
- Version:      1.2.0
+ Version:      1.2.1
  Text Domain:  hello-elementor-child
 */
+
+/* Hello Elementor skip link — stronger visible focus (keyboard users) */
+.skip-link.screen-reader-text:focus {
+  clip: auto !important;
+  clip-path: none !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 0.75rem !important;
+  padding: 0.65rem 1rem !important;
+  position: fixed !important;
+  left: 0.75rem !important;
+  top: 0.75rem !important;
+  z-index: 100000 !important;
+  background: #111 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  outline: 2px solid #b8960c !important;
+  outline-offset: 2px !important;
+}
 
 /* ============================================================
    BASE — Typography & smoothing
@@ -453,11 +474,16 @@ header.elementor-location-header {
 /* ============================================================
    CATEGORY INTRO — WooCommerce archive
    ============================================================ */
-.woocommerce-products-header__title {
+.woocommerce-products-header__title,
+.cc-page-h1 {
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
+}
+.cc-page-h1 {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
 }
 .woocommerce-products-header .woocommerce-product-subcategories { display: none; }
 .page-description,

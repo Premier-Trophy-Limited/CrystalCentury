@@ -3,6 +3,8 @@
  * Hello Elementor Child — functions.php
  */
 
+remove_action( 'wp_head', 'wp_generator' );
+
 // ── Stylesheets ──────────────────────────────────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style(
@@ -312,7 +314,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_cart() ) {
+    if ( is_cart() || is_page( [ 40204, 41086 ] ) ) {
         return cc_is_en()
             ? [
                 'title' => 'Quote List | Premier Trophy Hong Kong',
@@ -469,6 +471,19 @@ add_filter( 'wpseo_schema_website', function ( $data ) {
     $data['name']          = cc_brand_name();
     $data['alternateName'] = 'Premier Trophy';
 
+    // Fix EN SearchAction URL: Yoast generates ?lang=en?s= (double ?) instead of ?lang=en&s=
+    if ( ! empty( $data['potentialAction'] ) && is_array( $data['potentialAction'] ) ) {
+        foreach ( $data['potentialAction'] as &$action ) {
+            if ( isset( $action['target']['urlTemplate'] ) ) {
+                $action['target']['urlTemplate'] = preg_replace(
+                    '/\?lang=([a-z]+)\?s=/',
+                    '?lang=$1&s=',
+                    $action['target']['urlTemplate']
+                );
+            }
+        }
+    }
+
     return $data;
 } );
 
@@ -546,16 +561,6 @@ add_filter( 'wpseo_twitter_image', function ( $url ) {
     $fallback = cc_fallback_media_url_for_product( get_queried_object_id() );
 
     return $fallback ?: $url;
-} );
-
-add_filter( 'wpseo_twitter_title', function ( $title ) {
-    $copy = cc_meta_copy();
-    return $copy ? $copy['title'] : $title;
-} );
-
-add_filter( 'wpseo_twitter_description', function ( $description ) {
-    $copy = cc_meta_copy();
-    return $copy ? $copy['desc'] : $description;
 } );
 
 // WPML registers product_cat rewrite rules with the "category/" slug (a stale ZH
@@ -644,6 +649,26 @@ add_filter( 'the_title', function ( $title, $post_id ) {
 
     return $title;
 }, 10, 2 );
+
+// ── Cart / Checkout page H1 (Elementor hides the WP page title) ─────────────
+add_filter( 'the_content', function ( $content ) {
+    if ( is_admin() ) {
+        return $content;
+    }
+    $page_id = get_the_ID();
+    $cart_ids     = [ 40204, 41086 ];
+    $checkout_ids = [ 40193, 41095 ]; // ZH checkout, EN checkout
+
+    if ( in_array( (int) $page_id, $cart_ids, true ) ) {
+        $h1 = cc_is_en() ? 'Quote List' : '詢價清單';
+    } elseif ( in_array( (int) $page_id, $checkout_ids, true ) ) {
+        $h1 = cc_is_en() ? 'Submit Your Quote Request' : '提交詢價';
+    } else {
+        return $content;
+    }
+
+    return '<h1 class="cc-page-h1">' . esc_html( $h1 ) . '</h1>' . $content;
+}, 999 );
 
 add_filter( 'woocommerce_get_breadcrumb', function ( $crumbs ) {
     if ( is_admin() || empty( $crumbs ) ) {
@@ -924,6 +949,33 @@ add_filter( 'gettext', function ( $translated, $text ) {
 
     return $translated;
 }, 20, 2 );
+
+// Translate custom checkout field labels for EN visitors.
+add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
+    if ( ! cc_is_en() ) {
+        return $fields;
+    }
+    $label_map = [
+        'billing_estimateddate' => 'Estimated Delivery Date',
+        'billing_deliverymethod' => 'Collection Method',
+        'billing_inquiry'       => 'Enquiry Details',
+    ];
+    foreach ( $label_map as $key => $label ) {
+        if ( isset( $fields['billing'][ $key ] ) ) {
+            $fields['billing'][ $key ]['label'] = $label;
+        }
+    }
+    // Translate delivery method options if present
+    if ( isset( $fields['billing']['billing_deliverymethod']['options'] ) ) {
+        $opt_map = [ '自取' => 'Self-pickup', '送貨' => 'Delivery' ];
+        foreach ( $fields['billing']['billing_deliverymethod']['options'] as $k => $v ) {
+            if ( isset( $opt_map[ $v ] ) ) {
+                $fields['billing']['billing_deliverymethod']['options'][ $k ] = $opt_map[ $v ];
+            }
+        }
+    }
+    return $fields;
+}, 20 );
 
 add_filter( 'post_thumbnail_html', function ( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
     if ( is_admin() || get_post_type( $post_id ) !== 'product' ) {
