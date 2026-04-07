@@ -18,6 +18,109 @@ set_error_handler( function ( $errno, $errstr, $errfile ) {
 
 remove_action( 'wp_head', 'wp_generator' );
 
+// ── Central ID Registry ─────────────────────────────────────────────────────
+// All WordPress post, term, menu-item and attachment IDs referenced in this
+// theme live here. When deploying to a second domain with a fresh database,
+// only this function needs updating.
+function cc_config() {
+    return [
+        'pages' => [
+            'home'             => [ 'zh-hant' => 38090, 'en' => 41143 ],
+            'contact'          => [ 'zh-hant' => 38309, 'en' => 41116 ],
+            'about'            => [ 'zh-hant' => 38679, 'en' => 41101 ],
+            'cases'            => [ 'zh-hant' => 38221, 'en' => 41134 ],
+            'art'              => [ 'zh-hant' => 38310, 'en' => 41110 ],
+            'cart'             => [ 'zh-hant' => 40204, 'en' => 41086 ],
+            'checkout'         => [ 'zh-hant' => 40193, 'en' => 41095 ],
+            'terms_of_service' => [ 'zh-hant' => 40972, 'en' => 41076 ],
+            'privacy_policy'   => [ 'zh-hant' => 40975, 'en' => 41073 ],
+            'cookie_policy'    => [ 'zh-hant' => 40978, 'en' => 41070 ],
+            'disclaimer'       => [ 'zh-hant' => 40981, 'en' => 41067 ],
+            'shipping_policy'  => [ 'zh-hant' => 40995, 'en' => 41058 ],
+            'returns_refunds'  => [ 'zh-hant' => 40998, 'en' => 41055 ],
+            'payment_methods'  => [ 'zh-hant' => 41010, 'en' => 41043 ],
+        ],
+        'terms' => [
+            'trophy'              => [ 'zh-hant' => 333, 'en' => 347 ],
+            'medal'               => [ 'zh-hant' => 332, 'en' => 346 ],
+            'crystal_trophy'      => [ 'zh-hant' => 331, 'en' => 345 ],
+            'plaque'              => [ 'zh-hant' => 339, 'en' => 344 ],
+            'commemorative_plate' => [ 'zh-hant' => 335, 'en' => 350 ],
+            'certificate'         => [ 'zh-hant' => 338, 'en' => 349 ],
+            'flag'                => [ 'zh-hant' => 334, 'en' => 343 ],
+            'promotional_gift'    => [ 'zh-hant' => 340, 'en' => 342 ],
+            'acrylic'             => [ 'zh-hant' => 337, 'en' => 341 ],
+            '3d_crystal'          => [ 'zh-hant' => 330, 'en' => 298 ],
+            'pin_badge'           => [ 'zh-hant' => 336, 'en' => 348 ],
+        ],
+        'products' => [
+            'featured_zh' => [ 39450, 39454, 39462, 39458, 39466, 39543, 39470, 39474 ],
+            'featured_en' => [ 39452, 39456, 39464, 39460, 39468, 39545, 39472, 39476 ],
+        ],
+        'fallback_media' => [
+            'products' => [
+                39454 => 'assets/category-medal.svg',
+                39456 => 'assets/category-medal.svg',
+                39466 => 'assets/category-commemorative-plate.svg',
+                39468 => 'assets/category-commemorative-plate.svg',
+            ],
+            'terms' => [
+                332 => 'assets/category-medal.svg',
+                346 => 'assets/category-medal.svg',
+                335 => 'assets/category-commemorative-plate.svg',
+                350 => 'assets/category-commemorative-plate.svg',
+            ],
+        ],
+        'assets' => [
+            'logo'           => 38605,
+            'case_standard'  => 37591,
+            'case_miss_asia' => 37602,
+            'case_corporate' => 38859,
+            'case_sports'    => 38863,
+            'art_feature'    => 38900,
+        ],
+        'menu_items' => [
+            41545 => [ 'page' => 'home',    'lang' => 'zh-hant' ],
+            41546 => [ 'page' => 'shop',    'lang' => 'zh-hant' ],
+            41550 => [ 'page' => 'contact', 'lang' => 'zh-hant' ],
+            41551 => [ 'page' => 'home',    'lang' => 'en' ],
+            41552 => [ 'page' => 'home',    'lang' => 'en' ],
+            41553 => [ 'page' => 'shop',    'lang' => 'en' ],
+            41557 => [ 'page' => 'contact', 'lang' => 'en' ],
+            41558 => [ 'page' => 'home',    'lang' => 'zh-hant' ],
+        ],
+    ];
+}
+
+/** Retrieve a page ID pair from config, with 'default' key. */
+function cc_page_ids( $key ) {
+    $cfg = cc_config();
+    $ids = $cfg['pages'][ $key ] ?? [];
+    if ( $ids && ! isset( $ids['default'] ) ) {
+        $ids['default'] = $ids['zh-hant'] ?? 0;
+    }
+    return $ids;
+}
+
+/** Return flat array of both ZH and EN page IDs. */
+function cc_page_id_pair( $key ) {
+    $ids = cc_page_ids( $key );
+    return array_values( array_filter( [ $ids['zh-hant'] ?? 0, $ids['en'] ?? 0 ] ) );
+}
+
+/** Retrieve a term ID for a category key and language. */
+function cc_term_id( $key, $lang = '' ) {
+    $lang = $lang ?: cc_current_lang();
+    $cfg  = cc_config();
+    return (int) ( $cfg['terms'][ $key ][ $lang ] ?? $cfg['terms'][ $key ]['zh-hant'] ?? 0 );
+}
+
+/** Retrieve an attachment ID from config. */
+function cc_asset_id( $key ) {
+    $cfg = cc_config();
+    return (int) ( $cfg['assets'][ $key ] ?? 0 );
+}
+
 // ── Stylesheets ──────────────────────────────────────────────────────────────
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style(
@@ -128,11 +231,7 @@ function cc_resolve_page_url( array $page_ids, array $path_candidates, $lang = '
 
 function cc_contact_page_url( $lang = '' ) {
     return cc_resolve_page_url(
-        [
-            'zh-hant' => 38309,
-            'en'      => 41116,
-            'default' => 38309,
-        ],
+        cc_page_ids( 'contact' ),
         [ 'contact-us-en', 'contact-us', '聯絡我們' ],
         $lang
     );
@@ -174,20 +273,7 @@ function cc_theme_asset_url( $relative_path ) {
 }
 
 function cc_fallback_media_map() {
-    return [
-        'products' => [
-            39454 => 'assets/category-medal.svg',
-            39456 => 'assets/category-medal.svg',
-            39466 => 'assets/category-commemorative-plate.svg',
-            39468 => 'assets/category-commemorative-plate.svg',
-        ],
-        'terms'    => [
-            332 => 'assets/category-medal.svg',
-            346 => 'assets/category-medal.svg',
-            335 => 'assets/category-commemorative-plate.svg',
-            350 => 'assets/category-commemorative-plate.svg',
-        ],
-    ];
+    return cc_config()['fallback_media'];
 }
 
 function cc_fallback_media_url_for_product( $product_id ) {
@@ -229,12 +315,8 @@ function cc_product_fallback_alt( $product_id ) {
 
 function cc_featured_product_ids( $lang = '' ) {
     $lang = $lang ? sanitize_key( $lang ) : cc_current_lang();
-
-    if ( $lang === 'en' ) {
-        return [ 39452, 39456, 39464, 39460, 39468, 39545, 39472, 39476 ];
-    }
-
-    return [ 39450, 39454, 39462, 39458, 39466, 39543, 39470, 39474 ];
+    $cfg  = cc_config();
+    return ( $lang === 'en' ) ? $cfg['products']['featured_en'] : $cfg['products']['featured_zh'];
 }
 
 function cc_decode_u_sequences( $content ) {
@@ -279,7 +361,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_page( [ 38309, 41116 ] ) ) {
+    if ( is_page( cc_page_id_pair( 'contact' ) ) ) {
         return cc_is_en()
             ? [
                 'title' => 'Contact Premier Trophy | Trophy, Medal & Gift Enquiries in Hong Kong',
@@ -291,7 +373,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_page( [ 38679, 41101 ] ) ) {
+    if ( is_page( cc_page_id_pair( 'about' ) ) ) {
         return cc_is_en()
             ? [
                 'title' => 'About Premier Trophy | Hong Kong Trophy & Corporate Gift Specialist',
@@ -303,7 +385,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_page( [ 38221, 41134 ] ) ) {
+    if ( is_page( cc_page_id_pair( 'cases' ) ) ) {
         return cc_is_en()
             ? [
                 'title' => 'Case Studies | Premier Trophy Projects for Schools & Institutions',
@@ -315,7 +397,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_page( [ 38310, 41110 ] ) ) {
+    if ( is_page( cc_page_id_pair( 'art' ) ) ) {
         return cc_is_en()
             ? [
                 'title' => 'Art & Craft Gifts | Custom Presentation Pieces | Premier Trophy',
@@ -327,7 +409,7 @@ function cc_meta_copy() {
             ];
     }
 
-    if ( is_cart() || is_page( [ 40204, 41086 ] ) ) {
+    if ( is_cart() || is_page( cc_page_id_pair( 'cart' ) ) ) {
         return cc_is_en()
             ? [
                 'title' => 'Quote List | Premier Trophy Hong Kong',
@@ -433,7 +515,7 @@ add_filter( 'wpseo_schema_organization', function ( $data ) {
         return $data;
     }
 
-    $logo_id   = 38605;
+    $logo_id   = cc_asset_id( 'logo' );
     $logo_url  = wp_get_attachment_url( $logo_id );
     $logo_meta = wp_get_attachment_metadata( $logo_id );
 
@@ -663,19 +745,27 @@ add_filter( 'woocommerce_page_title', function ( $title ) {
 
     if ( is_product_category() && cc_is_en() ) {
         $term   = get_queried_object();
-        $h1_map = [
-            347 => 'Custom Trophies Hong Kong',
-            346 => 'Custom Medals Hong Kong',
-            345 => 'Crystal Trophies Hong Kong',
-            344 => 'Custom Plaques Hong Kong',
-            350 => 'Commemorative Plates Hong Kong',
-            349 => 'Custom Certificates Hong Kong',
-            343 => 'Custom Flags &amp; Banners Hong Kong',
-            342 => 'Promotional Gifts Hong Kong',
-            348 => 'Custom Pin Badges Hong Kong',
-            298 => '3D Crystal Awards Hong Kong',
-            341 => 'Acrylic Awards Hong Kong',
+        $cfg    = cc_config();
+        $h1_map = [];
+        $h1_labels = [
+            'trophy'              => 'Custom Trophies Hong Kong',
+            'medal'               => 'Custom Medals Hong Kong',
+            'crystal_trophy'      => 'Crystal Trophies Hong Kong',
+            'plaque'              => 'Custom Plaques Hong Kong',
+            'commemorative_plate' => 'Commemorative Plates Hong Kong',
+            'certificate'         => 'Custom Certificates Hong Kong',
+            'flag'                => 'Custom Flags &amp; Banners Hong Kong',
+            'promotional_gift'    => 'Promotional Gifts Hong Kong',
+            'pin_badge'           => 'Custom Pin Badges Hong Kong',
+            '3d_crystal'          => '3D Crystal Awards Hong Kong',
+            'acrylic'             => 'Acrylic Awards Hong Kong',
         ];
+        foreach ( $h1_labels as $cat_key => $h1_text ) {
+            $en_id = $cfg['terms'][ $cat_key ]['en'] ?? 0;
+            if ( $en_id ) {
+                $h1_map[ $en_id ] = $h1_text;
+            }
+        }
         if ( $term instanceof WP_Term && isset( $h1_map[ $term->term_id ] ) ) {
             return $h1_map[ $term->term_id ];
         }
@@ -719,8 +809,8 @@ add_filter( 'the_content', function ( $content ) {
         return $content;
     }
     $page_id = get_the_ID();
-    $cart_ids     = [ 40204, 41086 ];
-    $checkout_ids = [ 40193, 41095 ]; // ZH checkout, EN checkout
+    $cart_ids     = cc_page_id_pair( 'cart' );
+    $checkout_ids = cc_page_id_pair( 'checkout' );
 
     if ( in_array( (int) $page_id, $cart_ids, true ) ) {
         $h1 = cc_is_en() ? 'Quote List' : '詢價清單';
@@ -753,7 +843,7 @@ add_filter( 'woocommerce_get_breadcrumb', function ( $crumbs ) {
 
         if ( isset( $crumb[1] ) ) {
             if ( in_array( $crumb[0], [ 'Home', '首頁' ], true ) ) {
-                $crumb[1] = cc_resolve_page_url( [ 'zh-hant' => 38090, 'en' => 41143, 'default' => 38090 ], [ 'home' ], cc_current_lang() );
+                $crumb[1] = cc_resolve_page_url( cc_page_ids( 'home' ), [ 'home' ], cc_current_lang() );
             }
 
             if ( in_array( $crumb[0], [ 'Shop', '產品分類' ], true ) ) {
@@ -786,7 +876,7 @@ add_filter( 'wpseo_breadcrumb_links', function ( $links ) {
 
         if ( isset( $link['url'] ) ) {
             if ( in_array( $link['text'], [ '首頁', 'Home' ], true ) ) {
-                $link['url'] = cc_resolve_page_url( [ 'zh-hant' => 38090, 'en' => 41143, 'default' => 38090 ], [ 'home' ], cc_current_lang() );
+                $link['url'] = cc_resolve_page_url( cc_page_ids( 'home' ), [ 'home' ], cc_current_lang() );
             }
 
             if ( in_array( $link['text'], [ 'Shop', '產品分類', 'Product Categories' ], true ) ) {
@@ -965,7 +1055,7 @@ add_filter( 'elementor/widget/render_content', function ( $content ) {
     }
 
     $cta_label   = cc_is_en() ? 'Contact Us' : '聯絡我們';
-    $cta_url     = get_permalink( cc_is_en() ? 41116 : 38309 );
+    $cta_url     = cc_contact_page_url();
     $shop_url    = cc_shop_page_url();
     $placeholder = cc_is_en() ? 'Search trophies, medals or gifts' : '搜尋獎盃、獎牌或禮品';
 
@@ -1188,40 +1278,40 @@ function cc_footer_links( $lang = '' ) {
 
     $quick = $is_en
         ? [
-            [ 'label' => 'Home',         'url' => cc_resolve_page_url( [ 'zh-hant' => 38090, 'en' => 41143, 'default' => 38090 ], [ 'home' ], $lang ) ],
+            [ 'label' => 'Home',         'url' => cc_resolve_page_url( cc_page_ids( 'home' ), [ 'home' ], $lang ) ],
             [ 'label' => 'Shop',         'url' => cc_shop_page_url( $lang ) ],
-            [ 'label' => 'About Us',     'url' => cc_resolve_page_url( [ 'zh-hant' => 38679, 'en' => 41101, 'default' => 38679 ], [ 'about-us', 'about', '關於我們' ], $lang ) ],
-            [ 'label' => 'Case Studies', 'url' => cc_resolve_page_url( [ 'zh-hant' => 38221, 'en' => 41134, 'default' => 38221 ], [ 'case-studies', '客戶案例' ], $lang ) ],
-            [ 'label' => 'Art & Craft',  'url' => cc_resolve_page_url( [ 'zh-hant' => 38310, 'en' => 41110, 'default' => 38310 ], [ 'art-craft', '藝術工藝' ], $lang ) ],
+            [ 'label' => 'About Us',     'url' => cc_resolve_page_url( cc_page_ids( 'about' ), [ 'about-us', 'about', '關於我們' ], $lang ) ],
+            [ 'label' => 'Case Studies', 'url' => cc_resolve_page_url( cc_page_ids( 'cases' ), [ 'case-studies', '客戶案例' ], $lang ) ],
+            [ 'label' => 'Art & Craft',  'url' => cc_resolve_page_url( cc_page_ids( 'art' ), [ 'art-craft', '藝術工藝' ], $lang ) ],
             [ 'label' => 'Contact Us',   'url' => cc_contact_page_url( $lang ) ],
         ]
         : [
-            [ 'label' => '首頁',     'url' => cc_resolve_page_url( [ 'zh-hant' => 38090, 'en' => 41143, 'default' => 38090 ], [ 'home' ], $lang ) ],
+            [ 'label' => '首頁',     'url' => cc_resolve_page_url( cc_page_ids( 'home' ), [ 'home' ], $lang ) ],
             [ 'label' => '商品',     'url' => cc_shop_page_url( $lang ) ],
-            [ 'label' => '關於我們', 'url' => cc_resolve_page_url( [ 'zh-hant' => 38679, 'en' => 41101, 'default' => 38679 ], [ 'about', '關於我們' ], $lang ) ],
-            [ 'label' => '客戶案例', 'url' => cc_resolve_page_url( [ 'zh-hant' => 38221, 'en' => 41134, 'default' => 38221 ], [ 'case-studies', '客戶案例' ], $lang ) ],
-            [ 'label' => '藝術工藝', 'url' => cc_resolve_page_url( [ 'zh-hant' => 38310, 'en' => 41110, 'default' => 38310 ], [ 'art-craft', '藝術工藝' ], $lang ) ],
+            [ 'label' => '關於我們', 'url' => cc_resolve_page_url( cc_page_ids( 'about' ), [ 'about', '關於我們' ], $lang ) ],
+            [ 'label' => '客戶案例', 'url' => cc_resolve_page_url( cc_page_ids( 'cases' ), [ 'case-studies', '客戶案例' ], $lang ) ],
+            [ 'label' => '藝術工藝', 'url' => cc_resolve_page_url( cc_page_ids( 'art' ), [ 'art-craft', '藝術工藝' ], $lang ) ],
             [ 'label' => '聯絡我們', 'url' => cc_contact_page_url( $lang ) ],
         ];
 
     $legal = $is_en
         ? [
-            [ 'label' => 'Terms of Service',     'url' => cc_resolve_page_url( [ 'zh-hant' => 40972, 'en' => 41076, 'default' => 40972 ], [ 'terms-of-service-en', 'terms-of-service' ], $lang ) ],
-            [ 'label' => 'Privacy Policy',       'url' => cc_resolve_page_url( [ 'zh-hant' => 40975, 'en' => 41073, 'default' => 40975 ], [ 'privacy-policy' ], $lang ) ],
-            [ 'label' => 'Cookie Policy',        'url' => cc_resolve_page_url( [ 'zh-hant' => 40978, 'en' => 41070, 'default' => 40978 ], [ 'cookie-policy' ], $lang ) ],
-            [ 'label' => 'Disclaimer',           'url' => cc_resolve_page_url( [ 'zh-hant' => 40981, 'en' => 41067, 'default' => 40981 ], [ 'disclaimer' ], $lang ) ],
-            [ 'label' => 'Shipping Policy',      'url' => cc_resolve_page_url( [ 'zh-hant' => 40995, 'en' => 41058, 'default' => 40995 ], [ 'shipping-policy' ], $lang ) ],
-            [ 'label' => 'Returns & Refunds',    'url' => cc_resolve_page_url( [ 'zh-hant' => 40998, 'en' => 41055, 'default' => 40998 ], [ 'returns-refunds' ], $lang ) ],
-            [ 'label' => 'Payment Methods',      'url' => cc_resolve_page_url( [ 'zh-hant' => 41010, 'en' => 41043, 'default' => 41010 ], [ 'payment-methods-en', 'payment-methods' ], $lang ) ],
+            [ 'label' => 'Terms of Service',     'url' => cc_resolve_page_url( cc_page_ids( 'terms_of_service' ), [ 'terms-of-service-en', 'terms-of-service' ], $lang ) ],
+            [ 'label' => 'Privacy Policy',       'url' => cc_resolve_page_url( cc_page_ids( 'privacy_policy' ), [ 'privacy-policy' ], $lang ) ],
+            [ 'label' => 'Cookie Policy',        'url' => cc_resolve_page_url( cc_page_ids( 'cookie_policy' ), [ 'cookie-policy' ], $lang ) ],
+            [ 'label' => 'Disclaimer',           'url' => cc_resolve_page_url( cc_page_ids( 'disclaimer' ), [ 'disclaimer' ], $lang ) ],
+            [ 'label' => 'Shipping Policy',      'url' => cc_resolve_page_url( cc_page_ids( 'shipping_policy' ), [ 'shipping-policy' ], $lang ) ],
+            [ 'label' => 'Returns & Refunds',    'url' => cc_resolve_page_url( cc_page_ids( 'returns_refunds' ), [ 'returns-refunds' ], $lang ) ],
+            [ 'label' => 'Payment Methods',      'url' => cc_resolve_page_url( cc_page_ids( 'payment_methods' ), [ 'payment-methods-en', 'payment-methods' ], $lang ) ],
         ]
         : [
-            [ 'label' => '服務條款',       'url' => cc_resolve_page_url( [ 'zh-hant' => 40972, 'en' => 41076, 'default' => 40972 ], [ 'terms-of-service' ], $lang ) ],
-            [ 'label' => '私隱政策',       'url' => cc_resolve_page_url( [ 'zh-hant' => 40975, 'en' => 41073, 'default' => 40975 ], [ 'privacy-policy' ], $lang ) ],
-            [ 'label' => 'Cookie 政策',    'url' => cc_resolve_page_url( [ 'zh-hant' => 40978, 'en' => 41070, 'default' => 40978 ], [ 'cookie-policy' ], $lang ) ],
-            [ 'label' => '免責聲明',       'url' => cc_resolve_page_url( [ 'zh-hant' => 40981, 'en' => 41067, 'default' => 40981 ], [ 'disclaimer' ], $lang ) ],
-            [ 'label' => '運送政策',       'url' => cc_resolve_page_url( [ 'zh-hant' => 40995, 'en' => 41058, 'default' => 40995 ], [ 'shipping-policy' ], $lang ) ],
-            [ 'label' => '退款及退貨政策', 'url' => cc_resolve_page_url( [ 'zh-hant' => 40998, 'en' => 41055, 'default' => 40998 ], [ 'returns-refunds' ], $lang ) ],
-            [ 'label' => '付款方式',       'url' => cc_resolve_page_url( [ 'zh-hant' => 41010, 'en' => 41043, 'default' => 41010 ], [ 'payment-methods' ], $lang ) ],
+            [ 'label' => '服務條款',       'url' => cc_resolve_page_url( cc_page_ids( 'terms_of_service' ), [ 'terms-of-service' ], $lang ) ],
+            [ 'label' => '私隱政策',       'url' => cc_resolve_page_url( cc_page_ids( 'privacy_policy' ), [ 'privacy-policy' ], $lang ) ],
+            [ 'label' => 'Cookie 政策',    'url' => cc_resolve_page_url( cc_page_ids( 'cookie_policy' ), [ 'cookie-policy' ], $lang ) ],
+            [ 'label' => '免責聲明',       'url' => cc_resolve_page_url( cc_page_ids( 'disclaimer' ), [ 'disclaimer' ], $lang ) ],
+            [ 'label' => '運送政策',       'url' => cc_resolve_page_url( cc_page_ids( 'shipping_policy' ), [ 'shipping-policy' ], $lang ) ],
+            [ 'label' => '退款及退貨政策', 'url' => cc_resolve_page_url( cc_page_ids( 'returns_refunds' ), [ 'returns-refunds' ], $lang ) ],
+            [ 'label' => '付款方式',       'url' => cc_resolve_page_url( cc_page_ids( 'payment_methods' ), [ 'payment-methods' ], $lang ) ],
         ];
 
     return [
@@ -1232,7 +1322,7 @@ function cc_footer_links( $lang = '' ) {
 
 add_shortcode( 'cc_footer', function () {
     $lang  = cc_current_lang();
-    $logo  = wp_get_attachment_url( 38605 );
+    $logo  = wp_get_attachment_url( cc_asset_id( 'logo' ) );
     $links = cc_footer_links( $lang );
 
     ob_start();
@@ -1241,7 +1331,7 @@ add_shortcode( 'cc_footer', function () {
     <div class="cc-site-footer">
       <div class="cc-site-footer__grid">
         <div class="cc-site-footer__brand">
-          <a class="cc-site-footer__logo" href="<?php echo esc_url( cc_resolve_page_url( [ 'zh-hant' => 38090, 'en' => 41143, 'default' => 38090 ], [ 'home' ], $lang ) ); ?>">
+          <a class="cc-site-footer__logo" href="<?php echo esc_url( cc_resolve_page_url( cc_page_ids( 'home' ), [ 'home' ], $lang ) ); ?>">
             <img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( cc_brand_name() ); ?>" loading="lazy">
           </a>
           <p class="cc-site-footer__copy"><?php echo esc_html( cc_is_en() ? 'Custom trophies, medals, certificates and corporate gifts for schools, institutions and events in Hong Kong.' : '為香港學校、機構及大型活動提供獎盃、獎牌、證書及企業禮品訂製服務。' ); ?></p>
@@ -1283,17 +1373,17 @@ add_filter( 'wp_nav_menu_objects', function ( $items ) {
     $map     = [
         'Home'         => $home_en,
         'Shop'         => cc_shop_page_url( 'en' ),
-        'About Us'     => cc_resolve_page_url( [ 'zh-hant' => 38679, 'en' => 41101, 'default' => 38679 ], [ 'about-us', 'about', '關於我們' ], 'en' ),
-        'Case Studies' => cc_resolve_page_url( [ 'zh-hant' => 38221, 'en' => 41134, 'default' => 38221 ], [ 'case-studies', '客戶案例' ], 'en' ),
-        'Art & Craft'  => cc_resolve_page_url( [ 'zh-hant' => 38310, 'en' => 41110, 'default' => 38310 ], [ 'art-craft', '藝術工藝' ], 'en' ),
+        'About Us'     => cc_resolve_page_url( cc_page_ids( 'about' ), [ 'about-us', 'about', '關於我們' ], 'en' ),
+        'Case Studies' => cc_resolve_page_url( cc_page_ids( 'cases' ), [ 'case-studies', '客戶案例' ], 'en' ),
+        'Art & Craft'  => cc_resolve_page_url( cc_page_ids( 'art' ), [ 'art-craft', '藝術工藝' ], 'en' ),
         'Contact Us'   => cc_contact_page_url( 'en' ),
         '中文'          => $home_zh,
         '首頁'          => $home_zh,
         '商品'          => cc_shop_page_url( 'zh-hant' ),
         '商品分類'      => cc_shop_page_url( 'zh-hant' ),
-        '關於我們'      => cc_resolve_page_url( [ 'zh-hant' => 38679, 'en' => 41101, 'default' => 38679 ], [ '關於我們', 'about-us', 'about' ], 'zh-hant' ),
-        '客戶案例'      => cc_resolve_page_url( [ 'zh-hant' => 38221, 'en' => 41134, 'default' => 38221 ], [ '客戶案例', 'case-studies' ], 'zh-hant' ),
-        '藝術工藝'      => cc_resolve_page_url( [ 'zh-hant' => 38310, 'en' => 41110, 'default' => 38310 ], [ '藝術工藝', 'art-craft' ], 'zh-hant' ),
+        '關於我們'      => cc_resolve_page_url( cc_page_ids( 'about' ), [ '關於我們', 'about-us', 'about' ], 'zh-hant' ),
+        '客戶案例'      => cc_resolve_page_url( cc_page_ids( 'cases' ), [ '客戶案例', 'case-studies' ], 'zh-hant' ),
+        '藝術工藝'      => cc_resolve_page_url( cc_page_ids( 'art' ), [ '藝術工藝', 'art-craft' ], 'zh-hant' ),
         '聯絡我們'      => cc_contact_page_url( 'zh-hant' ),
         'EN'           => $home_en,
     ];
@@ -1306,16 +1396,18 @@ add_filter( 'wp_nav_menu_objects', function ( $items ) {
         $id    = isset( $item->ID ) ? (int) $item->ID : 0;
         $title = trim( wp_strip_all_tags( (string) $item->title ) );
 
-        $id_map = [
-            41545 => $home_zh,
-            41546 => cc_shop_page_url( 'zh-hant' ),
-            41550 => cc_contact_page_url( 'zh-hant' ),
-            41551 => $home_en,
-            41552 => $home_en,
-            41553 => cc_shop_page_url( 'en' ),
-            41557 => cc_contact_page_url( 'en' ),
-            41558 => $home_zh,
-        ];
+        $cfg    = cc_config();
+        $id_map = [];
+        foreach ( $cfg['menu_items'] as $menu_id => $item_cfg ) {
+            $item_lang = $item_cfg['lang'];
+            if ( $item_cfg['page'] === 'shop' ) {
+                $id_map[ $menu_id ] = cc_shop_page_url( $item_lang );
+            } elseif ( $item_cfg['page'] === 'contact' ) {
+                $id_map[ $menu_id ] = cc_contact_page_url( $item_lang );
+            } else {
+                $id_map[ $menu_id ] = ( $item_lang === 'en' ) ? $home_en : $home_zh;
+            }
+        }
 
         if ( isset( $id_map[ $id ] ) && is_string( $id_map[ $id ] ) && $id_map[ $id ] !== '' ) {
             $item->url = $id_map[ $id ];
@@ -1336,16 +1428,17 @@ add_shortcode( 'cc_catgrid', function( $atts ) {
 
     $lang = $atts['lang'] ? sanitize_key( $atts['lang'] ) : cc_current_lang();
 
-    // Category slug → EN/ZH pairs: [en_slug, zh_slug, EN label, ZH label, EN term_id, ZH term_id]
+    // Category data: [en_slug, zh_slug, EN label, ZH label, config_key]
+    $cfg  = cc_config();
     $cats = [
-        [ 'trophy',              '獎盃',     'Trophy',              '獎盃',     347, 333 ],
-        [ 'medal',               '獎牌',     'Medal',               '獎牌',     346, 332 ],
-        [ 'crystal-trophy',      '水晶獎座', 'Crystal Trophy',      '水晶獎座', 345, 331 ],
-        [ 'plaque',              '木盾',     'Plaque',              '木盾',     344, 339 ],
-        [ 'commemorative-plate', '銀碟',     'Commemorative Plate', '銀碟',     350, 335 ],
-        [ 'certificate',         '證書',     'Certificate',         '證書',     349, 338 ],
-        [ 'flag',                '旗幟',     'Flag',                '旗幟',     343, 334 ],
-        [ 'commemorative-gift',  '廣告禮品', 'Promotional Gift',    '廣告禮品', 342, 340 ],
+        [ 'trophy',              '獎盃',     'Trophy',              '獎盃',     'trophy' ],
+        [ 'medal',               '獎牌',     'Medal',               '獎牌',     'medal' ],
+        [ 'crystal-trophy',      '水晶獎座', 'Crystal Trophy',      '水晶獎座', 'crystal_trophy' ],
+        [ 'plaque',              '木盾',     'Plaque',              '木盾',     'plaque' ],
+        [ 'commemorative-plate', '銀碟',     'Commemorative Plate', '銀碟',     'commemorative_plate' ],
+        [ 'certificate',         '證書',     'Certificate',         '證書',     'certificate' ],
+        [ 'flag',                '旗幟',     'Flag',                '旗幟',     'flag' ],
+        [ 'commemorative-gift',  '廣告禮品', 'Promotional Gift',    '廣告禮品', 'promotional_gift' ],
     ];
 
     $is_en   = ( $lang === 'en' );
@@ -1353,7 +1446,7 @@ add_shortcode( 'cc_catgrid', function( $atts ) {
 
     foreach ( $cats as $c ) {
         $label = $is_en ? $c[2] : $c[3];
-        $term_id   = $is_en ? $c[4] : $c[5];
+        $term_id   = $cfg['terms'][ $c[4] ][ $lang ] ?? 0;
         $url       = cc_product_category_url( $term_id, $lang );
         $thumb_id  = (int) get_term_meta( $term_id, 'thumbnail_id', true );
         $thumb_url = cc_fallback_media_url_for_term( $term_id );
@@ -1542,25 +1635,25 @@ add_shortcode( 'cc_cases_page', function () {
                 'title' => 'Standard Chartered Bank',
                 'meta'  => 'Corporate awards ceremony | Trophies',
                 'body'  => 'A presentation set produced for an annual recognition event, with engraved award titles and a finish suitable for a formal corporate stage.',
-                'image' => 37591,
+                'image' => cc_asset_id( 'case_standard' ),
             ],
             [
                 'title' => 'Miss Asia Pageant',
                 'meta'  => 'Pageant event | Trophies and presentation gifts',
                 'body'  => 'Custom award pieces created to reflect the event identity and the more polished visual standard expected in a media-facing ceremony.',
-                'image' => 37602,
+                'image' => cc_asset_id( 'case_miss_asia' ),
             ],
             [
                 'title' => 'Corporate Clients',
                 'meta'  => 'Recognition programmes | Trophies, medals, plaques',
                 'body'  => 'Recurring projects for organisations that need dependable production across anniversary gifts, team recognition and presentation occasions.',
-                'image' => 38859,
+                'image' => cc_asset_id( 'case_corporate' ),
             ],
             [
                 'title' => 'Sports & Athletic Events',
                 'meta'  => 'Competition events | Medals and trophies',
                 'body'  => 'Bulk award production for sports days, tournaments and regional events where timing, consistency and presentation quality all matter.',
-                'image' => 38863,
+                'image' => cc_asset_id( 'case_sports' ),
             ],
         ]
         : [
@@ -1568,25 +1661,25 @@ add_shortcode( 'cc_cases_page', function () {
                 'title' => '渣打銀行',
                 'meta'  => '企業頒獎典禮｜獎盃',
                 'body'  => '為年度表揚典禮製作的一系列獎盃，配合企業品牌與正式頒獎場合，整體效果偏向穩重、專業及上鏡。',
-                'image' => 37591,
+                'image' => cc_asset_id( 'case_standard' ),
             ],
             [
                 'title' => '亞洲小姐',
                 'meta'  => '選美活動｜獎盃及展示禮品',
                 'body'  => '按活動形象訂製的獎項與展示禮品，重點在於儀式感、品牌一致性，以及現場展示時的整體質感。',
-                'image' => 37602,
+                'image' => cc_asset_id( 'case_miss_asia' ),
             ],
             [
                 'title' => '企業客戶',
                 'meta'  => '表揚及紀念項目｜獎盃、獎牌、木盾',
                 'body'  => '涵蓋企業周年紀念、員工表揚及活動獎項等不同場景，重視穩定交付與成品呈現的一致性。',
-                'image' => 38859,
+                'image' => cc_asset_id( 'case_corporate' ),
             ],
             [
                 'title' => '體育及比賽活動',
                 'meta'  => '賽事頒獎｜獎牌及獎盃',
                 'body'  => '為多個體育活動與比賽提供批量獎牌及獎盃，重點在交期管理、數量準確與頒獎現場的展示效果。',
-                'image' => 38863,
+                'image' => cc_asset_id( 'case_sports' ),
             ],
         ];
 
@@ -1693,7 +1786,7 @@ add_shortcode( 'cc_art_page', function () {
       </div>
       <div class="cc-page-feature">
         <div class="cc-page-feature__media">
-          <?php echo cc_page_image_html( 38900, 'large', $copy['title'] ); ?>
+          <?php echo cc_page_image_html( cc_asset_id( 'art_feature' ), 'large', $copy['title'] ); ?>
         </div>
         <div class="cc-page-feature__body">
           <?php foreach ( $copy['paragraphs'] as $paragraph ) : ?>
@@ -1794,7 +1887,7 @@ function cc_filter_frontend_markup( $html ) {
         }
     }
 
-    if ( is_page( [ 38309, 41116 ] ) ) {
+    if ( is_page( cc_page_id_pair( 'contact' ) ) ) {
         $html = preg_replace( '/<h2([^>]*)>(Contact Us|聯絡我們)<\/h2>/', '<h1$1>$2</h1>', $html, 1 );
     }
 
