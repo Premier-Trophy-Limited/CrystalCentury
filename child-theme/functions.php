@@ -1883,6 +1883,188 @@ add_shortcode( 'cc_art_page', function () {
     return (string) ob_get_clean();
 } );
 
+// ── FAQ page ─────────────────────────────────────────────────────────────────
+add_shortcode( 'cc_faq_page', function () {
+    $is_en = cc_is_en();
+
+    $faqs = $is_en
+        ? [
+            [
+                'q' => 'How long does production take?',
+                'a' => 'Typically 5–10 working days depending on product type, quantity, and artwork complexity. Urgent orders may be possible — please enquire.',
+            ],
+            [
+                'q' => 'Is there a minimum order quantity?',
+                'a' => 'Minimums vary by product. Most categories accommodate small runs. Contact us with your requirements for accurate guidance.',
+            ],
+            [
+                'q' => 'Can I supply my own artwork or logo?',
+                'a' => 'Yes. Provide high-resolution AI, PDF or PNG files. Please confirm all text and spelling before we begin production.',
+            ],
+            [
+                'q' => 'What payment methods do you accept?',
+                'a' => 'Bank transfer, cheque, and PayMe are available. Confirm your preferred method when you place your enquiry.',
+            ],
+            [
+                'q' => 'Do you provide a proof before production?',
+                'a' => 'Yes. We send an artwork proof for your approval before any production begins. Changes can be requested at this stage.',
+            ],
+            [
+                'q' => 'Do you deliver across Hong Kong?',
+                'a' => 'Yes. Local Hong Kong delivery is available. Self-collection from our workshop is also an option.',
+            ],
+            [
+                'q' => 'Can you provide an invoice or receipt?',
+                'a' => 'Yes. Formal invoices are available for schools, institutions, and corporate procurement.',
+            ],
+        ]
+        : [
+            [
+                'q' => '訂製時間大概多長？',
+                'a' => '一般需要 5–10 個工作日，視乎產品類型、數量及設計複雜程度而定。如有時間壓力，請先查詢是否可以安排。',
+            ],
+            [
+                'q' => '最低訂購量是多少？',
+                'a' => '不同產品有不同要求，部分種類可以小批量起訂。請告知所需產品及數量，我們會提供具體說明。',
+            ],
+            [
+                'q' => '可以提供自己的設計稿或標誌嗎？',
+                'a' => '可以。請提供高解析度 AI、PDF 或 PNG 格式文件，並於確認前核對所有文字內容。',
+            ],
+            [
+                'q' => '付款方式有哪些？',
+                'a' => '接受銀行轉帳、支票及 PayMe。查詢時請確認您偏好的付款方式。',
+            ],
+            [
+                'q' => '生產前會提供打樣或設計稿確認嗎？',
+                'a' => '會。我們會在生產前提供設計稿供您確認。如需修改，可在此階段提出。',
+            ],
+            [
+                'q' => '提供香港本地送貨嗎？',
+                'a' => '提供。亦可安排自取。查詢時請說明您的收貨或取貨需要。',
+            ],
+            [
+                'q' => '可以提供正式發票或收據嗎？',
+                'a' => '可以。適合學校、機構及企業採購需要。',
+            ],
+        ];
+
+    $cta_title   = $is_en ? 'Still have questions?' : '仍有其他問題？';
+    $cta_body    = $is_en
+        ? 'WhatsApp or email us — we reply quickly with practical answers.'
+        : '歡迎透過 WhatsApp 或電郵聯絡我們，我們會盡快回覆。';
+    $contact_url = cc_contact_page_url( cc_current_lang() );
+    $contact_cta = $is_en ? 'Contact Us' : '聯絡我們';
+
+    ob_start();
+    ?>
+    <section class="cc-page-shell">
+      <div class="cc-page-hero">
+        <p class="cc-page-eyebrow"><?php echo $is_en ? 'FAQ' : '常見問題'; ?></p>
+        <h1><?php echo $is_en ? 'Common questions about custom orders.' : '訂製查詢常見問題。'; ?></h1>
+        <p class="cc-page-lead"><?php echo $is_en
+            ? 'Quick answers on lead time, customization, payment, and delivery.'
+            : '關於交期、訂製流程、付款及送貨的快速解答。'; ?></p>
+      </div>
+      <div class="cc-page-content" style="max-width:760px;margin:0 auto;padding:20px 20px 40px;">
+        <?php foreach ( $faqs as $faq ) : ?>
+        <div class="cc-faq-item" style="margin-bottom:24px;border-bottom:1px solid #ece8e0;padding-bottom:20px;">
+          <h2 style="font-size:1.1rem;margin-bottom:8px;"><?php echo esc_html( $faq['q'] ); ?></h2>
+          <p style="margin:0;color:#444;"><?php echo esc_html( $faq['a'] ); ?></p>
+        </div>
+        <?php endforeach; ?>
+      </div>
+      <div class="cc-page-cta">
+        <h2><?php echo esc_html( $cta_title ); ?></h2>
+        <p><?php echo esc_html( $cta_body ); ?></p>
+        <div class="cc-page-actions">
+          <?php echo cc_page_action_link( $contact_cta, $contact_url ); ?>
+        </div>
+      </div>
+    </section>
+    <?php
+    return (string) ob_get_clean();
+} );
+
+// ── Bulk Order page ───────────────────────────────────────────────────────────
+add_shortcode( 'cc_bulk_order_page', function () {
+    $is_en = cc_is_en();
+
+    $steps = $is_en
+        ? [
+            'Confirm product type and quantity',
+            'Provide artwork — logo, text, and any event-specific details',
+            'Review the production proof and approve',
+            'We confirm pricing and lead time, then go to production',
+            'Delivery or self-collection at the agreed date',
+        ]
+        : [
+            '確認產品類型及數量',
+            '提供設計資料 — 標誌、文字及活動相關說明',
+            '審閱並確認生產稿',
+            '我們確認報價及交期後開始生產',
+            '按約定日期送貨或安排自取',
+        ];
+
+    $suitable = $is_en
+        ? [
+            'Schools — sports days, prize presentations, academic ceremonies',
+            'Institutions and associations — annual recognition events',
+            'Corporate — client gifts, employee recognition, branded merchandise',
+            'Sports clubs, races, and league competitions',
+            'Government and community events',
+        ]
+        : [
+            '學校 — 運動會、頒獎禮、學術典禮',
+            '機構及社團 — 年度表揚活動',
+            '企業 — 客戶禮品、員工嘉許、品牌禮品',
+            '體育隊伍、跑步活動及聯賽比賽',
+            '政府及社區活動',
+        ];
+
+    $contact_url = cc_contact_page_url( cc_current_lang() );
+    $contact_cta = $is_en ? 'Send an Enquiry' : '提交查詢';
+
+    ob_start();
+    ?>
+    <section class="cc-page-shell">
+      <div class="cc-page-hero">
+        <p class="cc-page-eyebrow"><?php echo $is_en ? 'BULK ORDERS' : '大量訂製'; ?></p>
+        <h1><?php echo $is_en
+            ? 'Practical support for larger award and gift orders.'
+            : '為學校、機構及企業提供大量訂製支援。'; ?></h1>
+        <p class="cc-page-lead"><?php echo $is_en
+            ? 'We work with schools, corporations, clubs and institutions to manage bulk orders efficiently — from artwork to delivery.'
+            : '我們協助學校、機構及企業有效處理大量訂製，從設計確認到送貨一條龍跟進。'; ?></p>
+      </div>
+      <div class="cc-page-grid" style="max-width:760px;margin:0 auto;padding:20px 20px 20px;">
+        <h2><?php echo $is_en ? 'How bulk orders work' : '大量訂製流程'; ?></h2>
+        <ol class="cc-page-list" style="margin-bottom:32px;">
+          <?php foreach ( $steps as $step ) : ?>
+          <li><?php echo esc_html( $step ); ?></li>
+          <?php endforeach; ?>
+        </ol>
+        <h2><?php echo $is_en ? 'Suitable for' : '適合對象'; ?></h2>
+        <ul class="cc-page-list">
+          <?php foreach ( $suitable as $item ) : ?>
+          <li><?php echo esc_html( $item ); ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <div class="cc-page-cta">
+        <h2><?php echo $is_en ? 'Ready to plan your order?' : '準備好規劃訂製了嗎？'; ?></h2>
+        <p><?php echo $is_en
+            ? 'Send us your product type, quantity, and event date. We will confirm pricing and lead time quickly.'
+            : '請告知產品類型、數量及活動日期，我們會盡快提供報價及交期確認。'; ?></p>
+        <div class="cc-page-actions">
+          <?php echo cc_page_action_link( $contact_cta, $contact_url ); ?>
+        </div>
+      </div>
+    </section>
+    <?php
+    return (string) ob_get_clean();
+} );
+
 function cc_filter_frontend_markup( $html ) {
     if ( ! is_string( $html ) || $html === '' ) {
         return $html;
