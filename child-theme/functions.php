@@ -734,20 +734,73 @@ add_filter( 'redirect_canonical', function ( $redirect_url, $requested_url ) {
     return $redirect_url;
 }, 1, 2 );
 
+// ── 301 redirects for obsolete category pages & junk stubs ──────────────────
+// These old Elementor pages (trophy-zh, medal-zh, etc.) pre-date the current
+// WooCommerce category architecture. They are indexed but duplicate. Redirect
+// them permanently so crawl budget and link equity go to the right URLs.
+add_action( 'template_redirect', function () {
+    if ( ! is_page() ) {
+        return;
+    }
+    global $post;
+    if ( ! $post instanceof WP_Post ) {
+        return;
+    }
+    $zh = [
+        'trophy-zh'              => '/product-category/trophy/',
+        'medal-zh'               => '/product-category/medal/',
+        'crystal-trophy-zh'      => '/product-category/crystal-trophy/',
+        'plaque-zh'              => '/product-category/plaque/',
+        'commemorative-plate-zh' => '/product-category/commemorative-plate/',
+        'certificate-zh'         => '/product-category/certificate/',
+        'flag-zh'                => '/product-category/flag/',
+        'commemorative-gift-zh'  => '/product-category/commemorative-gift/',
+        'acrylic-zh'             => '/product-category/acrylic/',
+        '3d-crystal-zh'          => '/product-category/3d-crystal/',
+        'refund_returns'         => '/returns-refunds/',
+        'product'                => '/shop/',
+        'testing'                => '/',
+        'about'                  => '/about-us/?lang=en',
+        'contact'                => '/contact-us-en/?lang=en',
+    ];
+    $en = [
+        'trophy-en'              => '/product-category/trophy/?lang=en',
+        'medal-en'               => '/product-category/medal/?lang=en',
+        'crystal-trophy-en'      => '/product-category/crystal-trophy/?lang=en',
+        'plaque-en'              => '/product-category/plaque/?lang=en',
+        'commemorative-plate-en' => '/product-category/commemorative-plate/?lang=en',
+        'certificate-en'         => '/product-category/certificate/?lang=en',
+        'flag-en'                => '/product-category/flag/?lang=en',
+        'commemorative-gift-en'  => '/product-category/commemorative-gift/?lang=en',
+        'acrylic-en'             => '/product-category/acrylic/?lang=en',
+        '3d-crystal-en'          => '/product-category/3d-crystal/?lang=en',
+        'testing-en'             => '/?lang=en',
+    ];
+    $map  = array_merge( $zh, $en );
+    $slug = $post->post_name;
+    if ( isset( $map[ $slug ] ) ) {
+        wp_redirect( home_url( $map[ $slug ] ), 301 );
+        exit;
+    }
+} );
+
 add_filter( 'woocommerce_page_title', function ( $title ) {
     if ( is_shop() ) {
-        return cc_is_en() ? 'Custom Trophies, Medals &amp; Awards Hong Kong' : '產品分類';
+        return cc_is_en()
+            ? 'Custom Trophies, Medals &amp; Awards Hong Kong'
+            : '訂製獎盃・獎牌・企業禮品 香港';
     }
 
     if ( is_cart() ) {
         return cc_is_en() ? 'Quote List' : '詢價清單';
     }
 
-    if ( is_product_category() && cc_is_en() ) {
+    if ( is_product_category() ) {
         $term   = get_queried_object();
         $cfg    = cc_config();
         $h1_map = [];
-        $h1_labels = [
+
+        $en_labels = [
             'trophy'              => 'Custom Trophies Hong Kong',
             'medal'               => 'Custom Medals Hong Kong',
             'crystal_trophy'      => 'Crystal Trophies Hong Kong',
@@ -760,10 +813,26 @@ add_filter( 'woocommerce_page_title', function ( $title ) {
             '3d_crystal'          => '3D Crystal Awards Hong Kong',
             'acrylic'             => 'Acrylic Awards Hong Kong',
         ];
-        foreach ( $h1_labels as $cat_key => $h1_text ) {
-            $en_id = $cfg['terms'][ $cat_key ]['en'] ?? 0;
-            if ( $en_id ) {
-                $h1_map[ $en_id ] = $h1_text;
+        $zh_labels = [
+            'trophy'              => '訂製獎盃 香港',
+            'medal'               => '訂製獎牌 香港',
+            'crystal_trophy'      => '水晶獎座訂製 香港',
+            'plaque'              => '木盾訂製 香港',
+            'commemorative_plate' => '銀碟訂製 香港',
+            'certificate'         => '訂製證書 香港',
+            'flag'                => '旗幟訂製 香港',
+            'promotional_gift'    => '廣告禮品訂製 香港',
+            'pin_badge'           => '訂製襟章 香港',
+            '3d_crystal'          => '3D水晶訂製 香港',
+            'acrylic'             => '亞加力膠獎項 香港',
+        ];
+
+        $lang_key = cc_is_en() ? 'en' : 'zh-hant';
+        $labels   = cc_is_en() ? $en_labels : $zh_labels;
+        foreach ( $labels as $cat_key => $h1_text ) {
+            $term_id = $cfg['terms'][ $cat_key ][ $lang_key ] ?? 0;
+            if ( $term_id ) {
+                $h1_map[ $term_id ] = $h1_text;
             }
         }
         if ( $term instanceof WP_Term && isset( $h1_map[ $term->term_id ] ) ) {
@@ -793,7 +862,9 @@ add_filter( 'the_title', function ( $title, $post_id ) {
     }
 
     if ( is_shop() && (int) $post_id === (int) wc_get_page_id( 'shop' ) ) {
-        return cc_is_en() ? 'Custom Trophies, Medals &amp; Awards Hong Kong' : '產品分類';
+        return cc_is_en()
+            ? 'Custom Trophies, Medals &amp; Awards Hong Kong'
+            : '訂製獎盃・獎牌・企業禮品 香港';
     }
 
     if ( is_cart() && (int) $post_id === (int) wc_get_page_id( 'cart' ) ) {
