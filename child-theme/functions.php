@@ -2176,16 +2176,13 @@ function cc_rewrite_shop_category_card( $html, $slug, $label, $image_url = '' ) 
 }
 
 function cc_fix_shop_hreflang_links( $html ) {
+    // Fix WPML mis-labelling the ZH shop as an EN alternate.
     $html = str_replace(
         'hreflang="zh-hant" href="https://www.crystalcentury.com/shop/?lang=en"',
         'hreflang="zh-hant" href="https://www.crystalcentury.com/shop/"',
         $html
     );
-    $html = str_replace(
-        'hreflang="en" href="https://www.crystalcentury.com/shop/?lang=en"',
-        'hreflang="en" href="https://www.crystalcentury.com/shop-en/?lang=en"',
-        $html
-    );
+    // x-default should point to the canonical ZH shop, not the ?lang=en variant.
     $html = str_replace(
         'hreflang="x-default" href="https://www.crystalcentury.com/shop/?lang=en"',
         'hreflang="x-default" href="https://www.crystalcentury.com/shop/"',

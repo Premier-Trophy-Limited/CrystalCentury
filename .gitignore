@@ -8,6 +8,7 @@ Thumbs.db
 
 # Logs
 *.log
+error_log
 
 # PowerShell
 *.tmp
@@ -15,3 +16,18 @@ Thumbs.db
 # Local audit artifacts
 output/
 docs/audits/*.html
+
+# WordPress core (not tracked)
+wp-admin/
+wp-includes/
+index.php
+wp-*.php
+xmlrpc.php
+readme.html
+license.txt
+wp-config-sample.php
+sitemap_index.xml
+
+# .htaccess backups
+.htaccess.bak*
+.htaccess.bk
