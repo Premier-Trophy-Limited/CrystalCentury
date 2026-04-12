@@ -1,0 +1,501 @@
+{
+    "38090": [
+        {
+            "id": "1c93eef2",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "content_width": "full",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0
+                }
+            },
+            "elements": [
+                {
+                    "id": "3ce4b654",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "flex_direction": "row",
+                        "position": "relative"
+                    },
+                    "elements": [
+                        {
+                            "id": "39273e8",
+                            "elType": "widget",
+                            "widgetType": "image-carousel",
+                            "settings": {
+                                "carousel": [
+                                    {
+                                        "url": "",
+                                        "id": 40887
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40466
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40468
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40470
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40472
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40474
+                                    }
+                                ],
+                                "slides_to_show": "1",
+                                "autoplay": "yes",
+                                "pause_on_hover": "yes",
+                                "autoplay_speed": 4000,
+                                "infinite": "yes",
+                                "effect": "fade",
+                                "width": {
+                                    "unit": "%",
+                                    "size": 100
+                                }
+                            },
+                            "elements": []
+                        },
+                        {
+                            "id": "cc_herolay",
+                            "elType": "container",
+                            "settings": {
+                                "position": "absolute",
+                                "z_index": 10,
+                                "_element_width": "auto",
+                                "flex_direction": "column",
+                                "justify_content": "center",
+                                "content_width": "full",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "40",
+                                    "right": "40",
+                                    "bottom": "40",
+                                    "left": "40",
+                                    "isLinked": false
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "cc_htag",
+                                    "elType": "widget",
+                                    "widgetType": "heading",
+                                    "settings": {
+                                        "title": "精製獎盃<br>獎牌・企業禮品",
+                                        "header_size": "h1",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 36
+                                        },
+                                        "typography_font_weight": "700",
+                                        "title_color": "#ffffff",
+                                        "text_shadow_text_shadow_type": "yes",
+                                        "text_shadow_text_shadow": {
+                                            "horizontal": 0,
+                                            "vertical": 1,
+                                            "blur": 3,
+                                            "color": "rgba(0,0,0,0.5)"
+                                        }
+                                    },
+                                    "elements": []
+                                },
+                                {
+                                    "id": "cc_hsub",
+                                    "elType": "widget",
+                                    "widgetType": "text-editor",
+                                    "settings": {
+                                        "editor": "<p style=\"color:#fff;font-size:16px;text-shadow:0 1px 3px rgba(0,0,0,0.5);\">一站式獎項訂制服務 ｜ 香港本地廠商</p>"
+                                    },
+                                    "elements": []
+                                },
+                                {
+                                    "id": "cc_hbtn",
+                                    "elType": "widget",
+                                    "widgetType": "button",
+                                    "settings": {
+                                        "text": "瀏覽全部產品",
+                                        "link": {
+                                            "url": "https://www.crystalcentury.com/products/"
+                                        },
+                                        "button_type": "default",
+                                        "background_color": "#b8860b",
+                                        "border_radius": {
+                                            "unit": "px",
+                                            "top": 4,
+                                            "right": 4,
+                                            "bottom": 4,
+                                            "left": 4,
+                                            "isLinked": true
+                                        },
+                                        "size": "lg"
+                                    },
+                                    "elements": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cc_catsec",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "align_items": "center",
+                "padding": {
+                    "unit": "px",
+                    "top": "40",
+                    "right": "20",
+                    "bottom": "40",
+                    "left": "20",
+                    "isLinked": false
+                },
+                "background_background": "classic",
+                "background_color": "#fafaf8"
+            },
+            "elements": [
+                {
+                    "id": "cc_cattitle",
+                    "elType": "widget",
+                    "widgetType": "heading",
+                    "settings": {
+                        "title": "精選產品分類",
+                        "align": "center",
+                        "typography_font_size": {
+                            "unit": "px",
+                            "size": 28
+                        },
+                        "typography_font_weight": "700",
+                        "title_color": "#2c2c2c",
+                        "_padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "24",
+                            "left": "0",
+                            "isLinked": false
+                        }
+                    },
+                    "elements": []
+                },
+                {
+                    "id": "cc_catgrid",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "elements": [],
+                    "settings": {
+                        "shortcode": "[cc_catgrid]"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "aefca37e",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "align_items": "center",
+                "padding": {
+                    "unit": "px",
+                    "top": "40",
+                    "right": "20",
+                    "bottom": "40",
+                    "left": "20",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "7dd359d6",
+                    "elType": "widget",
+                    "widgetType": "heading",
+                    "settings": {
+                        "title": "Top 99 人氣熱選",
+                        "align": "center",
+                        "typography_font_size": {
+                            "unit": "px",
+                            "size": 28
+                        },
+                        "typography_font_weight": "700",
+                        "title_color": "#2c2c2c",
+                        "_padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "24",
+                            "left": "0",
+                            "isLinked": false
+                        }
+                    },
+                    "elements": []
+                },
+                {
+                    "id": "8e219105",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[products limit=\"8\" columns=\"4\" orderby=\"menu_order\"]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "41143": [
+        {
+            "id": "1c93eef2",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "content_width": "full",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0
+                }
+            },
+            "elements": [
+                {
+                    "id": "3ce4b654",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "flex_direction": "row",
+                        "position": "relative"
+                    },
+                    "elements": [
+                        {
+                            "id": "7a1e07fb",
+                            "elType": "widget",
+                            "widgetType": "image-carousel",
+                            "settings": {
+                                "carousel": [
+                                    {
+                                        "url": "",
+                                        "id": 40888
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40467
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40469
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40471
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40473
+                                    },
+                                    {
+                                        "url": "",
+                                        "id": 40475
+                                    }
+                                ],
+                                "slides_to_show": "1",
+                                "autoplay": "yes",
+                                "pause_on_hover": "yes",
+                                "autoplay_speed": 4000,
+                                "infinite": "yes",
+                                "effect": "fade",
+                                "width": {
+                                    "unit": "%",
+                                    "size": 100
+                                }
+                            }
+                        },
+                        {
+                            "id": "cc_herolay",
+                            "elType": "container",
+                            "settings": {
+                                "position": "absolute",
+                                "z_index": 10,
+                                "_element_width": "auto",
+                                "flex_direction": "column",
+                                "justify_content": "center",
+                                "content_width": "full",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "40",
+                                    "right": "40",
+                                    "bottom": "40",
+                                    "left": "40",
+                                    "isLinked": false
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "cc_htag",
+                                    "elType": "widget",
+                                    "widgetType": "heading",
+                                    "settings": {
+                                        "title": "Custom Trophies &amp;<br>Corporate Gifts",
+                                        "header_size": "h1",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 36
+                                        },
+                                        "typography_font_weight": "700",
+                                        "title_color": "#ffffff",
+                                        "text_shadow_text_shadow_type": "yes",
+                                        "text_shadow_text_shadow": {
+                                            "horizontal": 0,
+                                            "vertical": 1,
+                                            "blur": 3,
+                                            "color": "rgba(0,0,0,0.5)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "cc_hsub",
+                                    "elType": "widget",
+                                    "widgetType": "text-editor",
+                                    "settings": {
+                                        "editor": "<p style=\"color:#fff;font-size:16px;text-shadow:0 1px 3px rgba(0,0,0,0.5);\">One-stop custom award service | Hong Kong manufacturer</p>"
+                                    }
+                                },
+                                {
+                                    "id": "cc_hbtn",
+                                    "elType": "widget",
+                                    "widgetType": "button",
+                                    "settings": {
+                                        "text": "Browse Products",
+                                        "link": {
+                                            "url": "https://www.crystalcentury.com/products/?lang=en"
+                                        },
+                                        "button_type": "default",
+                                        "background_color": "#b8860b",
+                                        "border_radius": {
+                                            "unit": "px",
+                                            "top": 4,
+                                            "right": 4,
+                                            "bottom": 4,
+                                            "left": 4,
+                                            "isLinked": true
+                                        },
+                                        "size": "lg"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cc_catsec",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "align_items": "center",
+                "padding": {
+                    "unit": "px",
+                    "top": "40",
+                    "right": "20",
+                    "bottom": "40",
+                    "left": "20",
+                    "isLinked": false
+                },
+                "background_background": "classic",
+                "background_color": "#fafaf8"
+            },
+            "elements": [
+                {
+                    "id": "cc_cattitle",
+                    "elType": "widget",
+                    "widgetType": "heading",
+                    "settings": {
+                        "title": "Featured Product Categories",
+                        "align": "center",
+                        "typography_font_size": {
+                            "unit": "px",
+                            "size": 28
+                        },
+                        "typography_font_weight": "700",
+                        "title_color": "#2c2c2c",
+                        "_padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "24",
+                            "left": "0",
+                            "isLinked": false
+                        }
+                    }
+                },
+                {
+                    "id": "cc_catgrid",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "elements": [],
+                    "settings": {
+                        "shortcode": "[cc_catgrid lang=\"en\"]"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "5895c114",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "align_items": "center",
+                "padding": {
+                    "unit": "px",
+                    "top": "40",
+                    "right": "20",
+                    "bottom": "40",
+                    "left": "20",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "ac68cfee",
+                    "elType": "widget",
+                    "widgetType": "heading",
+                    "settings": {
+                        "title": "Top 99 Popular Items",
+                        "align": "center",
+                        "typography_font_size": {
+                            "unit": "px",
+                            "size": 28
+                        },
+                        "typography_font_weight": "700",
+                        "title_color": "#2c2c2c",
+                        "_padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "24",
+                            "left": "0",
+                            "isLinked": false
+                        }
+                    }
+                },
+                {
+                    "id": "f628c433",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[products ids=\"39452,39456,39464,39460,39545,39484,39480,39472\" columns=\"4\"]"
+                    }
+                }
+            ]
+        }
+    ]
+}

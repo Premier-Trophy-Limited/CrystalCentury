@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['Large'=>'大きい','Material'=>'素材','Medium'=>'中くらい','Message'=>'メッセージ','Region'=>'領域','Size'=>'サイズ','Small'=>'小さい','[yith-woocommerce-product-add-ons]large'=>'大きい','[yith-woocommerce-product-add-ons]material'=>'素材','[yith-woocommerce-product-add-ons]medium'=>'中くらい','[yith-woocommerce-product-add-ons]message'=>'メッセージ','[yith-woocommerce-product-add-ons]region'=>'領域','[yith-woocommerce-product-add-ons]size'=>'サイズ','[yith-woocommerce-product-add-ons]small'=>'小さい']];

@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Enable Geolocation'=>['saveStringInDb'=>true,'cmp'=>['woolentor-addons',1],'names'=>[],'urls'=>[]],'Automatically detect and set currency based on customer location using WooCommerce geolocation. For best accuracy, enable "Geolocate" in WooCommerce → Settings → General → Default customer location.'=>['saveStringInDb'=>true,'cmp'=>['woolentor-addons',1],'names'=>[],'urls'=>[]]]];

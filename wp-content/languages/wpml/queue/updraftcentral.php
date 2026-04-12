@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Once every minute'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'UpdraftCentral'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'Manage your WordPress sites from a central dashboard'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'Dashboard Settings'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'Layout'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'Require role'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]],'Fill entire content area'=>['urls'=>[],'names'=>[],'cmp'=>['updraftcentral',1]]]];

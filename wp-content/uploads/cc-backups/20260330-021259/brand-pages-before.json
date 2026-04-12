@@ -1,0 +1,176 @@
+{
+    "38679": [
+        {
+            "id": "ccaboutz",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "ccaboutz",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_about_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "41101": [
+        {
+            "id": "ccaboute",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "ccaboute",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_about_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "38221": [
+        {
+            "id": "cccasezh",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "cccasezh",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_cases_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "41134": [
+        {
+            "id": "cccaseen",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "cccaseen",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_cases_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "38310": [
+        {
+            "id": "ccartzhr",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "ccartzhs",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_art_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "41110": [
+        {
+            "id": "ccartenr",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "ccartens",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_art_page]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1999 @@
+{
+    "38679": [
+        {
+            "id": "a263aef",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                },
+                "content_width": "full",
+                "width": {
+                    "unit": "%",
+                    "size": 100
+                },
+                "_flex_size": "none",
+                "_element_width": "initial"
+            },
+            "elements": [
+                {
+                    "id": "cb99cdc",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": 12.939
+                        },
+                        "_flex_size": "none",
+                        "_element_width": "initial"
+                    },
+                    "elements": [
+                        {
+                            "id": "4ccb476",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "商品分類",
+                                "header_size": "h1",
+                                "__globals__": {
+                                    "title_color": "globals/colors?id=primary"
+                                },
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "align": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40619"
+                        },
+                        {
+                            "id": "deeda47",
+                            "elType": "widget",
+                            "settings": {
+                                "menu_name": "選單",
+                                "menu": "ptrophy",
+                                "layout": "vertical",
+                                "pointer": "framed",
+                                "animation_framed": "corners",
+                                "dropdown": "none",
+                                "toggle_icon_normal": {
+                                    "value": "fas fa-trophy",
+                                    "library": "fa-solid"
+                                },
+                                "menu_typography_typography": "custom",
+                                "menu_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "menu_typography_font_weight": "500",
+                                "color_menu_item": "#4A86A2",
+                                "pointer_width": {
+                                    "unit": "px",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "padding_horizontal_menu_item": {
+                                    "unit": "px",
+                                    "size": 0,
+                                    "sizes": []
+                                },
+                                "dropdown_divider_border": "none",
+                                "dropdown_top_distance": {
+                                    "unit": "px",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "__globals__": {
+                                    "color_menu_item": "globals/colors?id=primary",
+                                    "menu_typography_typography": ""
+                                },
+                                "align_items": "start"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40482"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "9367523",
+                    "elType": "widget",
+                    "settings": {
+                        "editor": "<h1><span style=\"color: #4a86a2;\">2008年，第一家店!</span></h1><h3><span style=\"color: #4a86a2;\">“很長一段時間以來，我想要一個地方，我可以展示一些優雅的禮品，以及每人能得到一件有氣質的禮品。我喜歡非常簡單、略顯高貴和實用的東西混合。”</span></h3><p><span style=\"color: #4a86a2;\">卓越獎品有限公司在香港商業區改裝了一家懷舊店，變身成為了它的第一家店。這家第一間禮品店既是辦公室又是工作室，也是表達和聯繫的地方。之後的情況就這樣發生......客戶來自四方八面，香港、中國、日本、美國、英國，以及世界其他主要市場的客戶，大家互相展開一次又一次的對話和溝通， 建立多年持久的信任關係。這是承諾! 這就是我們對客戶的承諾 : 「高質量、實惠價格」。</span></p>"
+                    },
+                    "elements": [],
+                    "widgetType": "text-editor"
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "41101": [
+        {
+            "id": "a263aef",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                },
+                "content_width": "full",
+                "width": {
+                    "unit": "%",
+                    "size": 100
+                },
+                "_flex_size": "none",
+                "_element_width": "initial"
+            },
+            "elements": [
+                {
+                    "id": "cb99cdc",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": 12.939
+                        },
+                        "_flex_size": "none",
+                        "_element_width": "initial"
+                    },
+                    "elements": [
+                        {
+                            "id": "4ccb476",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "商品分類",
+                                "header_size": "h1",
+                                "__globals__": {
+                                    "title_color": "globals/colors?id=primary"
+                                },
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "align": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40619"
+                        },
+                        {
+                            "id": "deeda47",
+                            "elType": "widget",
+                            "settings": {
+                                "menu_name": "選單",
+                                "menu": "ptrophy",
+                                "layout": "vertical",
+                                "pointer": "framed",
+                                "animation_framed": "corners",
+                                "dropdown": "none",
+                                "toggle_icon_normal": {
+                                    "value": "fas fa-trophy",
+                                    "library": "fa-solid"
+                                },
+                                "menu_typography_typography": "custom",
+                                "menu_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "menu_typography_font_weight": "500",
+                                "color_menu_item": "#4A86A2",
+                                "pointer_width": {
+                                    "unit": "px",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "padding_horizontal_menu_item": {
+                                    "unit": "px",
+                                    "size": 0,
+                                    "sizes": []
+                                },
+                                "dropdown_divider_border": "none",
+                                "dropdown_top_distance": {
+                                    "unit": "px",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "__globals__": {
+                                    "color_menu_item": "globals/colors?id=primary",
+                                    "menu_typography_typography": ""
+                                },
+                                "align_items": "start"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40482"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "9367523",
+                    "elType": "widget",
+                    "settings": {
+                        "editor": "<h1><span style=\"color: #4a86a2;\">2008年，第一家店!</span></h1><h3><span style=\"color: #4a86a2;\">“For a long time, I envisioned a place where I could showcase elegant gifts — somewhere every person could find something with real quality and character. I love the combination of simplicity, a touch of refinement, and genuine practicality.”</span></h3><p><span style=\"color: #4a86a2;\">Crystal Century Ltd renovated a heritage shopfront in Hong Kong's business district, and it became our very first store — part office, part workshop, and a place for creative expression and connection. From there, things grew organically. Clients arrived from across Hong Kong, Mainland China, Japan, the USA, the UK, and other major markets around the world. Conversation by conversation, order by order, we built lasting relationships founded on trust. That is our promise — and it always has been: <em>\"High quality, affordable pricing.\"</em></span></p>"
+                    },
+                    "elements": [],
+                    "widgetType": "text-editor"
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "38221": [
+        {
+            "id": "8aa9135",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                },
+                "content_width": "full",
+                "width": {
+                    "unit": "%",
+                    "size": 98.416
+                },
+                "_flex_size": "none",
+                "_element_width": "initial"
+            },
+            "elements": [
+                {
+                    "id": "3147bdd",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "33.3333"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "0152753",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "商品分類",
+                                "header_size": "h1",
+                                "__globals__": {
+                                    "title_color": "globals/colors?id=primary"
+                                },
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 31,
+                                    "sizes": []
+                                },
+                                "align": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40619"
+                        },
+                        {
+                            "id": "82f32ff",
+                            "elType": "widget",
+                            "settings": {
+                                "menu_name": "選單",
+                                "menu": "ptrophy",
+                                "layout": "vertical",
+                                "pointer": "framed",
+                                "animation_framed": "corners",
+                                "dropdown": "none",
+                                "toggle_icon_normal": {
+                                    "value": "fas fa-trophy",
+                                    "library": "fa-solid"
+                                },
+                                "menu_typography_typography": "custom",
+                                "menu_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "menu_typography_font_weight": "500",
+                                "color_menu_item": "#4A86A2",
+                                "pointer_width": {
+                                    "unit": "px",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "padding_horizontal_menu_item": {
+                                    "unit": "px",
+                                    "size": 0,
+                                    "sizes": []
+                                },
+                                "dropdown_divider_border": "none",
+                                "dropdown_top_distance": {
+                                    "unit": "px",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "__globals__": {
+                                    "color_menu_item": "globals/colors?id=primary",
+                                    "menu_typography_typography": ""
+                                },
+                                "align_items": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40482"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "f9bc5c8",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "66.6666"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "4f4d7cce",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "20",
+                                    "right": "0",
+                                    "bottom": "20",
+                                    "left": "0",
+                                    "isLinked": false
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "94a313af",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "客戶案例",
+                                        "header_size": "h1",
+                                        "__globals__": {
+                                            "title_color": "globals/colors?id=primary"
+                                        },
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 36,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "fbaebaa4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>自2008年創立以來，卓越獎品有限公司已為數百家企業、學校及機構提供優質獎盃及禮品訂製服務，客戶遍及香港、中國、日本、美國及英國。以下為部分精選客戶案例，展示我們的工藝水平與服務範疇。</p>",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 15,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "c843c746",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "907e09e5",
+                            "elType": "container",
+                            "settings": {
+                                "flex_direction": "row",
+                                "content_width": "full",
+                                "flex_gap": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "column": "20",
+                                    "row": "20"
+                                },
+                                "flex_align_items": "flex-start"
+                            },
+                            "elements": [
+                                {
+                                    "id": "c3203fb1",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "e37db8d6",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 37591,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "26e764ac",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "渣打銀行（Standard Chartered）",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "c5c1c1ff",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>活動類型：</strong>企業頒獎典禮<br><strong>訂製產品：</strong>水晶獎座、銀碟</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "3bbe7676",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>渣打銀行為其年度卓越表現頒獎典禮訂製一系列精美水晶獎座及銀碟紀念品，彰顯對傑出員工及業績優秀團隊的表彰與嘉許。每件獎座均刻有渣打標誌及個人化獎項名稱，品質精良，典禮場面隆重。</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "de7e5c5e",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "4f0e93a4",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 37602,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "1ac8e7e9",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Miss Asia 選美比賽",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "d0e926f9",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>活動類型：</strong>選美活動<br><strong>訂製產品：</strong>訂製獎盃、王冠配件</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "a8d5a49e",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>為Miss Asia香港區選美比賽提供精緻訂製獎盃及相關頒獎禮品，每件均根據主辦機構的品牌形象度身訂製，充分展現典禮的高貴氣派與品牌形象。</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "8e90cf3a",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "c150931a",
+                            "elType": "container",
+                            "settings": {
+                                "flex_direction": "row",
+                                "content_width": "full",
+                                "flex_gap": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "column": "20",
+                                    "row": "20"
+                                },
+                                "flex_align_items": "flex-start"
+                            },
+                            "elements": [
+                                {
+                                    "id": "4c6a0694",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "8f73da03",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 38859,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "d44511db",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "各大企業客戶",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "a33fa14d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>活動類型：</strong>訂製獎盃及禮品<br><strong>訂製產品：</strong>多款獎盃、獎牌、木盾</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "785357a6",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>卓越獎品長期服務來自不同行業的企業客戶，提供各類頒獎典禮獎品、周年紀念禮品及企業推廣禮品。以下為部分實際訂單案例，展示我們的工藝水平與服務能力。</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "88fd44e8",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "25c72897",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 38863,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "6a021c8b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "體育及運動賽事",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "7ded2661",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>活動類型：</strong>運動比賽頒獎<br><strong>訂製產品：</strong>獎牌、獎盃</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "1664408c",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>我們為多個香港及亞太地區體育賽事提供批量訂製獎牌及獎盃。憑藉快捷的生產周期及嚴格的品質管控，確保每次活動均能如期收到符合要求的頒獎禮品。</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "28a8adab",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "6ca387d7",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "background_color": "#f9f7f0",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "30",
+                                    "right": "30",
+                                    "bottom": "30",
+                                    "left": "30",
+                                    "isLinked": false
+                                },
+                                "border_radius": {
+                                    "unit": "px",
+                                    "top": "8",
+                                    "right": "8",
+                                    "bottom": "8",
+                                    "left": "8",
+                                    "isLinked": true
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "fefc0a5d",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "立即查詢訂製方案",
+                                        "header_size": "h3",
+                                        "__globals__": {
+                                            "title_color": "globals/colors?id=primary"
+                                        },
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 24,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "db996be4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>無論是大型企業頒獎典禮、學校運動會，還是個人紀念禮品，我們都能為您提供專業的一站式訂製服務。歡迎聯絡我們的專業團隊，為您的活動度身打造最完美的獎品方案。</p>",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 15,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                },
+                                {
+                                    "id": "0a949a28",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "text": "立即聯絡我們",
+                                        "link": {
+                                            "url": "/contact-us/"
+                                        },
+                                        "align": "center",
+                                        "background_color": "#b8860b",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 16,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "button"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "41134": [
+        {
+            "id": "8aa9135",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                },
+                "content_width": "full",
+                "width": {
+                    "unit": "%",
+                    "size": 98.416
+                },
+                "_flex_size": "none",
+                "_element_width": "initial"
+            },
+            "elements": [
+                {
+                    "id": "3147bdd",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "33.3333"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "0152753",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Product Categories",
+                                "header_size": "h1",
+                                "__globals__": {
+                                    "title_color": "globals/colors?id=primary"
+                                },
+                                "typography_typography": "custom",
+                                "typography_font_size": {
+                                    "unit": "px",
+                                    "size": 31,
+                                    "sizes": []
+                                },
+                                "align": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40619"
+                        },
+                        {
+                            "id": "82f32ff",
+                            "elType": "widget",
+                            "settings": {
+                                "menu_name": "選單",
+                                "menu": "ptrophy",
+                                "layout": "vertical",
+                                "pointer": "framed",
+                                "animation_framed": "corners",
+                                "dropdown": "none",
+                                "toggle_icon_normal": {
+                                    "value": "fas fa-trophy",
+                                    "library": "fa-solid"
+                                },
+                                "menu_typography_typography": "custom",
+                                "menu_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "menu_typography_font_weight": "500",
+                                "color_menu_item": "#4A86A2",
+                                "pointer_width": {
+                                    "unit": "px",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "padding_horizontal_menu_item": {
+                                    "unit": "px",
+                                    "size": 0,
+                                    "sizes": []
+                                },
+                                "dropdown_divider_border": "none",
+                                "dropdown_top_distance": {
+                                    "unit": "px",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "__globals__": {
+                                    "color_menu_item": "globals/colors?id=primary",
+                                    "menu_typography_typography": ""
+                                },
+                                "align_items": "center"
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "40482"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "f9bc5c8",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "66.6666"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "4f4d7cce",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "20",
+                                    "right": "0",
+                                    "bottom": "20",
+                                    "left": "0",
+                                    "isLinked": false
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "94a313af",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Case Studies",
+                                        "header_size": "h1",
+                                        "__globals__": {
+                                            "title_color": "globals/colors?id=primary"
+                                        },
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 36,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "fbaebaa4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>自2008年創立以來，卓越獎品有限公司已為數百家企業、學校及機構提供優質獎盃及禮品訂製服務，客戶遍及香港、中國、日本、美國及英國。以下為部分精選Case Studies，展示我們的工藝水平與服務範疇。</p>",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 15,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "c843c746",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "907e09e5",
+                            "elType": "container",
+                            "settings": {
+                                "flex_direction": "row",
+                                "content_width": "full",
+                                "flex_gap": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "column": "20",
+                                    "row": "20"
+                                },
+                                "flex_align_items": "flex-start"
+                            },
+                            "elements": [
+                                {
+                                    "id": "c3203fb1",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "e37db8d6",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 37591,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                },
+                                                "caption": ""
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "26e764ac",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Standard Chartered Bank",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "c5c1c1ff",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>Event type: </strong>Corporate Award Ceremony<br><strong>Products: </strong>Crystal Trophies, Commemorative Plates</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "3bbe7676",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><p>Standard Chartered Bank commissioned a series of custom crystal trophies and commemorative plates for their annual excellence awards ceremony, honouring outstanding employees and high-performing teams. Each trophy was laser-engraved with the Standard Chartered logo and individual award title, crafted to the highest quality for a prestigious occasion.</p></p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "de7e5c5e",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "4f0e93a4",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 37602,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                },
+                                                "caption": ""
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "1ac8e7e9",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Miss Asia Pageant",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "d0e926f9",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>Event type: </strong>Pageant Event<br><strong>Products: </strong>Custom Trophies & Crown Accessories</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "a8d5a49e",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><p>Crystal Century supplied custom trophies and award gifts for the Miss Asia Hong Kong pageant. Each piece was individually crafted to reflect the event's brand identity, conveying the elegance and prestige befitting such a celebrated occasion.</p></p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "8e90cf3a",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "c150931a",
+                            "elType": "container",
+                            "settings": {
+                                "flex_direction": "row",
+                                "content_width": "full",
+                                "flex_gap": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "column": "20",
+                                    "row": "20"
+                                },
+                                "flex_align_items": "flex-start"
+                            },
+                            "elements": [
+                                {
+                                    "id": "4c6a0694",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "8f73da03",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 38859,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                },
+                                                "caption": ""
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "d44511db",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Corporate Clients",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "a33fa14d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>Event type: </strong>Custom Trophies & Gifts<br><strong>Products: </strong>Trophies, Medals, Plaques</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "785357a6",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><p>Crystal Century regularly serves corporate clients across a wide range of industries, supplying award ceremony trophies, anniversary commemorative gifts and corporate promotional merchandise. The above represents a cross-section of actual projects, demonstrating our production capabilities and quality standards.</p></p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "88fd44e8",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "width": {
+                                            "unit": "%",
+                                            "size": 50
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "25c72897",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": 38863,
+                                                    "url": ""
+                                                },
+                                                "image_size": "medium_large",
+                                                "image_border_radius": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "8",
+                                                    "bottom": "8",
+                                                    "left": "8",
+                                                    "isLinked": true
+                                                },
+                                                "caption": ""
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "6a021c8b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Sports & Athletic Events",
+                                                "header_size": "h3",
+                                                "__globals__": {
+                                                    "title_color": "globals/colors?id=primary"
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "7ded2661",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><strong>Event type: </strong>Sports Event Awards<br><strong>Products: </strong>Medals, Trophies</p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "1664408c",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p><p>We have supplied bulk custom medals and trophies for multiple sports events across Hong Kong and the Asia-Pacific region. Our efficient production cycle and strict quality control ensure every event receives award-ready pieces on schedule.</p></p>",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 14,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "28a8adab",
+                            "elType": "widget",
+                            "settings": {
+                                "separator_type": "pattern"
+                            },
+                            "elements": [],
+                            "widgetType": "divider"
+                        },
+                        {
+                            "id": "6ca387d7",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "background_color": "#f9f7f0",
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "30",
+                                    "right": "30",
+                                    "bottom": "30",
+                                    "left": "30",
+                                    "isLinked": false
+                                },
+                                "border_radius": {
+                                    "unit": "px",
+                                    "top": "8",
+                                    "right": "8",
+                                    "bottom": "8",
+                                    "left": "8",
+                                    "isLinked": true
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "fefc0a5d",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Enquire About Your Custom Order",
+                                        "header_size": "h3",
+                                        "__globals__": {
+                                            "title_color": "globals/colors?id=primary"
+                                        },
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 24,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "db996be4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>無論是大型Corporate Award Ceremony、學校運動會，還是個人紀念禮品，我們都能為您提供專業的一站式訂製服務。歡迎聯絡我們的專業團隊，為您的活動度身打造最完美的獎品方案。</p>",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 15,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                },
+                                {
+                                    "id": "0a949a28",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "text": "Contact Us Now",
+                                        "link": {
+                                            "url": "/contact-us/"
+                                        },
+                                        "align": "center",
+                                        "background_color": "#b8860b",
+                                        "typography_typography": "custom",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 16,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "button"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "38310": [
+        {
+            "id": "8d12928",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                }
+            },
+            "elements": [
+                {
+                    "id": "583aef3",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "33.3333"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "39678",
+                            "elType": "widget",
+                            "settings": {
+                                "icon_list": [
+                                    {
+                                        "text": "水晶獎座",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "d01040c"
+                                    },
+                                    {
+                                        "text": "3D水晶",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238623%22%7D\"]"
+                                        },
+                                        "_id": "0783b03"
+                                    },
+                                    {
+                                        "text": "獎牌",
+                                        "selected_icon": {
+                                            "value": "fas fa-medal",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "9a2effd"
+                                    },
+                                    {
+                                        "text": "獎盃",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "89d2e0f"
+                                    },
+                                    {
+                                        "text": "旗幟",
+                                        "selected_icon": {
+                                            "value": "far fa-flag",
+                                            "library": "fa-regular"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "ec61356"
+                                    },
+                                    {
+                                        "text": "亞加力膠",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "8f3acf1"
+                                    },
+                                    {
+                                        "text": "銀碟",
+                                        "selected_icon": {
+                                            "value": "fas fa-circle",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "14efbc1"
+                                    },
+                                    {
+                                        "text": "證書",
+                                        "selected_icon": {
+                                            "value": "fas fa-certificate",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "56248c9"
+                                    },
+                                    {
+                                        "text": "襟章",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "da69d73"
+                                    },
+                                    {
+                                        "text": "木盾",
+                                        "selected_icon": {
+                                            "value": "fas fa-shield-alt",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "1fa0d62"
+                                    },
+                                    {
+                                        "text": "廣告禮品",
+                                        "selected_icon": {
+                                            "value": "fas fa-gift",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "9d4aa82"
+                                    }
+                                ],
+                                "space_between": {
+                                    "unit": "px",
+                                    "size": 10,
+                                    "sizes": []
+                                },
+                                "icon_size": {
+                                    "unit": "px",
+                                    "size": 21,
+                                    "sizes": []
+                                },
+                                "text_indent": {
+                                    "unit": "px",
+                                    "size": 10,
+                                    "sizes": []
+                                },
+                                "icon_typography_typography": "custom",
+                                "icon_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 19,
+                                    "sizes": []
+                                },
+                                "view": "",
+                                "__globals__": {
+                                    "text_color": "globals/colors?id=primary"
+                                }
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "39678"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "2f84fbf",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "66.6666"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "1f2891d",
+                            "elType": "widget",
+                            "settings": {
+                                "image": {
+                                    "url": "https://www.crystalcentury.com/wp-content/uploads/2020/02/logo_ver15.jpg",
+                                    "id": 38901,
+                                    "size": "",
+                                    "alt": "",
+                                    "source": "library"
+                                }
+                            },
+                            "elements": [],
+                            "widgetType": "image"
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ],
+    "41110": [
+        {
+            "id": "8d12928",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                }
+            },
+            "elements": [
+                {
+                    "id": "583aef3",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "33.3333"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "39678",
+                            "elType": "widget",
+                            "settings": {
+                                "icon_list": [
+                                    {
+                                        "text": "水晶獎座",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "d01040c"
+                                    },
+                                    {
+                                        "text": "3D水晶",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238623%22%7D\"]"
+                                        },
+                                        "_id": "0783b03"
+                                    },
+                                    {
+                                        "text": "獎牌",
+                                        "selected_icon": {
+                                            "value": "fas fa-medal",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "9a2effd"
+                                    },
+                                    {
+                                        "text": "獎盃",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "89d2e0f"
+                                    },
+                                    {
+                                        "text": "旗幟",
+                                        "selected_icon": {
+                                            "value": "far fa-flag",
+                                            "library": "fa-regular"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "ec61356"
+                                    },
+                                    {
+                                        "text": "亞加力膠",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "8f3acf1"
+                                    },
+                                    {
+                                        "text": "銀碟",
+                                        "selected_icon": {
+                                            "value": "fas fa-circle",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "14efbc1"
+                                    },
+                                    {
+                                        "text": "證書",
+                                        "selected_icon": {
+                                            "value": "fas fa-certificate",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "56248c9"
+                                    },
+                                    {
+                                        "text": "襟章",
+                                        "selected_icon": {
+                                            "value": "fas fa-trophy",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "da69d73"
+                                    },
+                                    {
+                                        "text": "木盾",
+                                        "selected_icon": {
+                                            "value": "fas fa-shield-alt",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "1fa0d62"
+                                    },
+                                    {
+                                        "text": "廣告禮品",
+                                        "selected_icon": {
+                                            "value": "fas fa-gift",
+                                            "library": "fa-solid"
+                                        },
+                                        "__dynamic__": {
+                                            "link": "[elementor-tag id=\"68ab439\" name=\"internal-url\" settings=\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%2238428%22%7D\"]"
+                                        },
+                                        "_id": "9d4aa82"
+                                    }
+                                ],
+                                "space_between": {
+                                    "unit": "px",
+                                    "size": 10,
+                                    "sizes": []
+                                },
+                                "icon_size": {
+                                    "unit": "px",
+                                    "size": 21,
+                                    "sizes": []
+                                },
+                                "text_indent": {
+                                    "unit": "px",
+                                    "size": 10,
+                                    "sizes": []
+                                },
+                                "icon_typography_typography": "custom",
+                                "icon_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 19,
+                                    "sizes": []
+                                },
+                                "view": "",
+                                "__globals__": {
+                                    "text_color": "globals/colors?id=primary"
+                                }
+                            },
+                            "elements": [],
+                            "widgetType": "global",
+                            "templateID": "39678"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "2f84fbf",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "66.6666"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "1f2891d",
+                            "elType": "widget",
+                            "settings": {
+                                "image": {
+                                    "url": "https://www.crystalcentury.com/wp-content/uploads/2020/02/logo_ver15.jpg",
+                                    "id": 38900,
+                                    "size": "",
+                                    "alt": "",
+                                    "source": "library"
+                                },
+                                "caption": ""
+                            },
+                            "elements": [],
+                            "widgetType": "image"
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ]
+}

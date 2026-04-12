@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------
+# Block script execution in uploads
+# ----------------------------------------------------------------------
+<FilesMatch "\.(php|php[0-9]|phtml|phar)$">
+    Require all denied
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Allow only safe file types (images, docs)
+# ----------------------------------------------------------------------
+<FilesMatch "\.(jpe?g|png|gif|webp|pdf|docx?|txt|csv)$">
+    Require all granted
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Deny access to dangerous extensions
+# ----------------------------------------------------------------------
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|pl|cgi|exe|bat|js|jsp|asp|aspx)$">
+    Require all denied
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Disable directory browsing
+# ----------------------------------------------------------------------
+Options -Indexes
+
+# ----------------------------------------------------------------------
+# Extra protection: prevent serving files with no extension
+# ----------------------------------------------------------------------
+<FilesMatch "^[^.]+$">
+    Require all denied
+</FilesMatch>

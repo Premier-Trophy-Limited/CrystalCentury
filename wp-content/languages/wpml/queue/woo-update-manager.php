@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['WooCommerce.com Update Manager'=>['urls'=>[],'names'=>[],'cmp'=>['plugin metadata',1]],'Receive updates and streamlined support included in your Woo.com subscriptions.'=>['urls'=>[],'names'=>[],'cmp'=>['plugin metadata',1]],'Automattic'=>['urls'=>[],'names'=>[],'cmp'=>['plugin metadata',1]],'https://woocommerce.com/'=>['urls'=>[],'names'=>[],'cmp'=>['plugin metadata',1]],'1.0.3'=>['urls'=>[],'names'=>[],'cmp'=>['plugin metadata',1]]]];

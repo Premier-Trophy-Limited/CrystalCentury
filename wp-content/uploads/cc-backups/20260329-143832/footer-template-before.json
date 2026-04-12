@@ -1,0 +1,33 @@
+{
+    "ID": 41610,
+    "_elementor_data": [
+        {
+            "id": "ccfroot1",
+            "elType": "container",
+            "isInner": false,
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "ccfshort1",
+                    "elType": "widget",
+                    "widgetType": "shortcode",
+                    "settings": {
+                        "shortcode": "[cc_footer]"
+                    },
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "_elementor_conditions": "a:1:{i:0;s:15:\"include/general\";}"
+}

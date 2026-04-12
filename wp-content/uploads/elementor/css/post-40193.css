@@ -1,0 +1,9 @@
+.elementor-40193 .elementor-element.elementor-element-c30e643{--display:flex;}.elementor-40193 .elementor-element.elementor-element-e9da99e{--additional-information-display:block;}/* Start custom CSS for woocommerce-checkout-page, class: .elementor-element-e9da99e */.elementor-40193 .elementor-element.elementor-element-e9da99e .woocommerce-checkout .cart-subtotal,
+.elementor-40193 .elementor-element.elementor-element-e9da99e .woocommerce-checkout .product-total,
+.elementor-40193 .elementor-element.elementor-element-e9da99e .woocommerce-checkout .order-total {
+    display: none;
+}/* End custom CSS */
+/* Start custom CSS for container, class: .elementor-element-c30e643 */.elementor-40193 .elementor-element.elementor-element-c30e643 .product-price,
+.elementor-40193 .elementor-element.elementor-element-c30e643 .product-subtotal {
+    display: none;
+}/* End custom CSS */
