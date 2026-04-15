@@ -1,56 +1,29 @@
-# crystalcentury-site
+# CrystalCentury
 
-Operational source of truth for [crystalcentury.com](https://crystalcentury.com).
+Version-controlled custom code for [crystalcentury.com](https://crystalcentury.com) — a WordPress/WooCommerce trophy and recognition products storefront.
 
-## Live
+Tracks only the parts of the stack that are customised and benefit from version control. WordPress core, uploads, and the live database are excluded.
 
-- Site: https://crystalcentury.com
+## What's tracked
 
-This repo intentionally tracks only the parts of the WordPress stack that benefit from version control:
+| Directory | Contents |
+|-----------|----------|
+| `child-theme/` | `hello-elementor-child` custom styles and hooks |
+| `mu-plugins/` | Must-use plugins affecting storefront behaviour |
+| `scripts/` | Pull/deploy helpers for syncing code with the live host |
+| `docs/audits/` | Reproducible audit notes and captured HTML evidence |
+| `docs/exports/` | Lightweight option and identity exports from the live site |
 
-- `child-theme/`
-- `mu-plugins/`
-- `scripts/`
-- `docs/`
-
-It does not attempt to version WordPress core, uploads, or the full live database.
-
-## Structure
-
-- `child-theme/`: `hello-elementor-child` code pulled from the live site
-- `mu-plugins/`: live must-use plugins that materially affect storefront behavior
-- `scripts/`: pull/deploy helpers for syncing custom code with the live host
-- `docs/audits/`: reproducible audit notes and captured HTML evidence
-- `docs/exports/`: lightweight option and identity exports from the live site
-
-## Live sync
-
-Pull the current live custom code:
+## Sync workflow
 
 ```powershell
+# Pull current live custom code
 pwsh -NoProfile -File .\scripts\Pull-LiveCustomCode.ps1
-```
 
-Deploy the tracked custom code back to the live site:
-
-```powershell
+# Deploy tracked code back to the live site
 pwsh -NoProfile -File .\scripts\Deploy-LiveCustomCode.ps1
 ```
 
-## Operating boundary
+## Operating boundaries
 
-Managed ScalaHosting support scope must remain intact.
-
-Allowed here:
-
-- child theme changes
-- must-use plugin changes
-- WP-CLI verification
-- cache flushes
-
-Not tracked or modified here without deliberate escalation:
-
-- root or SPanel internals
-- Nginx/Apache/OpenLiteSpeed topology
-- `/swrapper`
-- server packages and services
+Changes are scoped to child theme, must-use plugins, WP-CLI verification, and cache operations. Root config, Nginx/OpenLiteSpeed topology, and server internals are out of scope.
